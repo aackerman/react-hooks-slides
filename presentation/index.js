@@ -130,13 +130,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <iframe src="https://carbon.now.sh/embed/?bg=rgba(171%2C%20184%2C%20195%2C%201)&t=blackboard&wt=none&l=auto&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=48px&ph=32px&ln=false&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false" style={{
-            transform: 'scale(1)',
-            width: 1024,
-            height: 600,
-            border: 0,
-            overflow: 'hidden'
-          }} sandbox="allow-scripts allow-same-origin" />
+          // TODO fill slide
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
@@ -162,6 +156,10 @@ export default class Presentation extends React.Component {
             July 17, 2013
           </Heading>
           <Text textColor="secondary">0.4.0</Text>
+
+          <Notes>
+            I'm going to start getting into some of the releases and the features that went along with them. I'm not going to call out all of the features, but I will bring up the notable ones. And I'm going to skip bug fixes entirely. There are a lot of bug fixes that go into each release.
+          </Notes>
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
@@ -169,6 +167,91 @@ export default class Presentation extends React.Component {
             Key Props
           </Heading>
           <Text textFont="monospace" textColor="secondary">{'<div key={id} />'}</Text>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            Not all elements were supported
+          </Heading>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            Synthetic Event System
+          </Heading>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            Consistent onChange event
+          </Heading>
+
+          <Notes>
+            React provides a consistent onChange event for all elements that behave as form inputs. This is differs from the behavior that the native DOM interface provides, but at least it provides some consistency to the user.
+          </Notes>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            React with Add-ons
+          </Heading>
+
+          <Notes>
+            Early on in React there was the concept of these addon packages that were supposed to help with using React.
+            TODO dig into more detail about which addons existed
+          </Notes>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            #id to data-reactid
+          </Heading>
+
+          <Notes>
+            To track changes to DOM nodes, early on in the history of React every node rendered by React was given a unique id. It's not uncommon to want to use ids for CSS styling so at some point in time the team moved to using data star attributes.
+          </Notes>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            0.5.0 (October 16, 2013)
+          </Heading>
+          <Text>class => className removed from react-tools</Text>
+
+          <Text>Support for more events</Text>
+          <Text>Support for more DOM properties</Text>
+
+          <Notes>
+            In October of 2013 the team released 0.5.0.
+
+            There was support in the react-tools project that I mentioned earlier to take the class attribute that is normally used in HTML and transform that to the className prop that is normally used in React components. The team decided to remove that functionality, and that might have been the right decision at the time, but the project using className instead of class continues to be a source of confusion for both beginner and seasoned developers and when copy/pasting HTML.
+          </Notes>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            0.8.0 (December 19, 2013)
+          </Heading>
+          <Text>Support for more events</Text>
+          <Text>Support for more DOM properties</Text>
+          <Notes>
+            In December of 2013 the team released 0.8.0. This was a smaller release that didn't have a lot of notable features.
+          </Notes>
+        </Slide>
+
+
+
+
+
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            Conclusions
+          </Heading>
+
+          <Notes>
+            React has had a long history as far as browser view libraries go. Personally I'm more excited to use React now than I was when I started. The team behind the project has strong corporate and community backing and there are major updates like Suspense still on the horizon in the coming months.
+          </Notes>
         </Slide>
       </Deck>
     );
