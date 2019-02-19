@@ -239,10 +239,268 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
 
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            January 2, 2014
+          </Heading>
+          <Text>React Developer Tools</Text>
 
+          <Notes>
+            The React developer tools were released in 2014. I honestly didn't know that they had been around for that long. The dev tools extension has been a great addition from the beginning and have only improved along way with React.
+          </Notes>
+        </Slide>
 
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            February 20, 2014: 0.9.0
+          </Heading>
+          <Text>Support for more events/callbacks</Text>
+          <Text>Support for more DOM properties/attributes</Text>
+          <Text>Support for more types in React.PropTypes</Text>
+          <Text>React.addons.TestUtils</Text>
+          <Text>React.addons.CSSTransitionGroup</Text>
+          <Text>Component.displayName</Text>
+          <Notes>
 
+          </Notes>
+        </Slide>
 
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            March 21, 2014: 0.10.0
+          </Heading>
+          <Text>Support for more DOM properties/attributes</Text>
+          <Text>React.addons.update</Text>
+          <Notes>
+
+          </Notes>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            July 13, 2014
+          </Heading>
+          <Text>react-hot-loader</Text>
+          <Notes>
+
+          </Notes>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            July 17, 2014: 0.11.0
+          </Heading>
+          <Text>{'Rendering null vs <div/>'}</Text>
+          <Text>PureRenderMixin</Text>
+          <Text>{'Component namespaces e.g. <Components.Checkbox />'}</Text>
+          <Text>Support for more DOM properties/attributes</Text>
+          <Text>Improved SVG support</Text>
+          <Notes>
+
+          </Notes>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            September 16, 2014: 0.11.2
+          </Heading>
+          <Text>{'<dialog> and <picture> elements'}</Text>
+          <Text>React.createElement API introduced</Text>
+          <Notes>
+
+          </Notes>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            October 28, 2014: 0.12.0
+          </Heading>
+          <Text>JSX Object Spread</Text>
+          <Text>React.createFactory</Text>
+          <Text>React.render instead of React.renderComponent</Text>
+          <Text>Lower-cased tags are now treated as DOM elements, upper-cased as composite components</Text>
+          <Text>JSX Pragma no longer required</Text>
+          <Notes>
+
+          </Notes>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            January 28-29 React.js Conf 2015
+          </Heading>
+          <Text>React Native</Text>
+          <Text>GraphQL</Text>
+          <Text>Relay</Text>
+          <Notes>
+
+          </Notes>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            March 10, 2015: 0.13.0
+          </Heading>
+
+          <Text>Calls to setState in life-cycle methods are now always batched and therefore asynchronous</Text>
+          <Text>Mutating props after an element is created is deprecated and will cause warnings</Text>
+          <Text>Support for using ES6 classes</Text>
+          <Text>React.findDOMNode</Text>
+          <Text>setState callback</Text>
+          <Text>React.addons.classSet deprecated, classnames module introduced</Text>
+          <Notes>
+
+          </Notes>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            June 2, 2015: Redux
+          </Heading>
+          <Notes>
+
+          </Notes>
+        </Slide>
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            Sept 14, 2015: React Native for Android
+          </Heading>
+          <Notes>
+
+          </Notes>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            October 7, 2015: 0.14.0
+          </Heading>
+
+          <Text>Stateless functional Components</Text>
+          <Text>react-dom</Text>
+          <Text>Separate packages for react addons</Text>
+          <Text>React.initializeTouchEvents</Text>
+          <Text>Deprecated react-tools in favor of babel</Text>
+          <Notes>
+
+          </Notes>
+        </Slide>
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            April 7, 2016: 15.0.0
+          </Heading>
+
+          <Text>Goodbye data-reactid</Text>
+          <Text>Goodbye extra spans</Text>
+          <Text>All SVG tags supported</Text>
+          <Notes>
+
+          </Notes>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            July 22, 2016: create-react-app
+          </Heading>
+
+          <Text></Text>
+          <Text></Text>
+          <Text></Text>
+          <Notes>
+
+          </Notes>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            July 29, 2016: 15.3.0
+          </Heading>
+
+          <Text>React.PureComponent</Text>
+          <Text>React Test Renderer</Text>
+          <Notes>
+
+          </Notes>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            March 16, 2017: prop-types
+          </Heading>
+          <Notes>
+            I gave the React team the prop-types repo
+          </Notes>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            June 13, 2017: 15.6.0
+          </Heading>
+          <Text>Deprecation warnings for React.createClass</Text>
+          <Notes>
+
+          </Notes>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            September 25, 2017: 15.6.2
+          </Heading>
+          <Text>Switched from BSD + Patents to MIT license</Text>
+          <Notes>
+
+          </Notes>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            September 26, 2017: 16.0.0
+          </Heading>
+          <Text>Rendering of arrays and strings from `render`</Text>
+          <Text>Error Boundaries</Text>
+          <Text>Portals</Text>
+          <Text>Server-side stream rendering</Text>
+          <Text>Fragments</Text>
+          <Text>Major Deprecations Removed</Text>
+          <Notes>
+
+          </Notes>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            November 9, 2017: 16.1.0
+          </Heading>
+          <Text>No more Bower releases</Text>
+          <Notes>
+
+          </Notes>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            March 29, 2018: 16.3.0
+          </Heading>
+          <Text>Officially supported Context API</Text>
+          <Text>React.createRef</Text>
+          <Text>React.forwardRef</Text>
+          <Text>getDerivedStateFromProps</Text>
+          <Text>React.StrictMode</Text>
+          <Text>React.unstable_AsyncMode to support suspense</Text>
+          <Notes>
+
+          </Notes>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            February 6, 2019: 16.8.0
+          </Heading>
+          <Text>Hooks</Text>
+          <Text>React.lazy</Text>
+          <Notes>
+
+          </Notes>
+        </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
           <Heading size={2} lineHeight={2} textColor="secondary">
