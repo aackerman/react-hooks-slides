@@ -216,10 +216,10 @@ export default class Presentation extends React.Component {
           <Heading size={2} lineHeight={2} textColor="secondary">
             0.5.0 (October 16, 2013)
           </Heading>
-          <Text>class => className removed from react-tools</Text>
+          <Text textColor="secondary">class => className removed from react-tools</Text>
 
-          <Text>Support for more events</Text>
-          <Text>Support for more DOM properties</Text>
+          <Text textColor="secondary">Support for more events</Text>
+          <Text textColor="secondary">Support for more DOM properties</Text>
 
           <Notes>
             In October of 2013 the team released 0.5.0.
@@ -232,8 +232,8 @@ export default class Presentation extends React.Component {
           <Heading size={2} lineHeight={2} textColor="secondary">
             0.8.0 (December 19, 2013)
           </Heading>
-          <Text>Support for more events</Text>
-          <Text>Support for more DOM properties</Text>
+          <Text textColor="secondary">Support for more events</Text>
+          <Text textColor="secondary">Support for more DOM properties</Text>
           <Notes>
             In December of 2013 the team released 0.8.0. This was a smaller release that didn't have a lot of notable features.
           </Notes>
@@ -243,7 +243,7 @@ export default class Presentation extends React.Component {
           <Heading size={2} lineHeight={2} textColor="secondary">
             January 2, 2014
           </Heading>
-          <Text>React Developer Tools</Text>
+          <Text textColor="secondary">React Developer Tools</Text>
 
           <Notes>
             The React developer tools were released in 2014. I honestly didn't know that they had been around for that long. The dev tools extension has been a great addition from the beginning and have only improved along way with React.
@@ -254,14 +254,14 @@ export default class Presentation extends React.Component {
           <Heading size={2} lineHeight={2} textColor="secondary">
             February 20, 2014: 0.9.0
           </Heading>
-          <Text>Support for more events/callbacks</Text>
-          <Text>Support for more DOM properties/attributes</Text>
-          <Text>Support for more types in React.PropTypes</Text>
-          <Text>React.addons.TestUtils</Text>
-          <Text>React.addons.CSSTransitionGroup</Text>
-          <Text>Component.displayName</Text>
+          <Text textColor="secondary">Support for more events/callbacks</Text>
+          <Text textColor="secondary">Support for more DOM properties/attributes</Text>
+          <Text textColor="secondary">Support for more types in React.PropTypes</Text>
+          <Text textColor="secondary">React.addons.TestUtils</Text>
+          <Text textColor="secondary">React.addons.CSSTransitionGroup</Text>
+          <Text textColor="secondary">Component.displayName</Text>
           <Notes>
-
+            TODO: needs notes and examples
           </Notes>
         </Slide>
 
@@ -269,10 +269,10 @@ export default class Presentation extends React.Component {
           <Heading size={2} lineHeight={2} textColor="secondary">
             March 21, 2014: 0.10.0
           </Heading>
-          <Text>Support for more DOM properties/attributes</Text>
-          <Text>React.addons.update</Text>
+          <Text textColor="secondary">Support for more DOM properties/attributes</Text>
+          <Text textColor="secondary">React.addons.update</Text>
           <Notes>
-
+            TODO: needs notes and examples
           </Notes>
         </Slide>
 
@@ -280,9 +280,9 @@ export default class Presentation extends React.Component {
           <Heading size={2} lineHeight={2} textColor="secondary">
             July 13, 2014
           </Heading>
-          <Text>react-hot-loader</Text>
+          <Text textColor="secondary">react-hot-loader</Text>
           <Notes>
-
+            TODO: needs notes and examples
           </Notes>
         </Slide>
 
@@ -290,13 +290,13 @@ export default class Presentation extends React.Component {
           <Heading size={2} lineHeight={2} textColor="secondary">
             July 17, 2014: 0.11.0
           </Heading>
-          <Text>{'Rendering null vs <div/>'}</Text>
-          <Text>PureRenderMixin</Text>
-          <Text>{'Component namespaces e.g. <Components.Checkbox />'}</Text>
-          <Text>Support for more DOM properties/attributes</Text>
-          <Text>Improved SVG support</Text>
+          <Text textColor="secondary">{'Rendering null vs <div/>'}</Text>
+          <Text textColor="secondary">PureRenderMixin</Text>
+          <Text textColor="secondary">{'Component namespaces e.g. <Components.Checkbox />'}</Text>
+          <Text textColor="secondary">Support for more DOM properties/attributes</Text>
+          <Text textColor="secondary">Improved SVG support</Text>
           <Notes>
-
+            TODO: needs notes and examples
           </Notes>
         </Slide>
 
@@ -304,10 +304,10 @@ export default class Presentation extends React.Component {
           <Heading size={2} lineHeight={2} textColor="secondary">
             September 16, 2014: 0.11.2
           </Heading>
-          <Text>{'<dialog> and <picture> elements'}</Text>
-          <Text>React.createElement API introduced</Text>
+          <Text textColor="secondary">{'<dialog> and <picture> elements'}</Text>
+          <Text textColor="secondary">React.createElement API introduced</Text>
           <Notes>
-
+            TODO: needs notes and examples
           </Notes>
         </Slide>
 
@@ -315,25 +315,32 @@ export default class Presentation extends React.Component {
           <Heading size={2} lineHeight={2} textColor="secondary">
             October 28, 2014: 0.12.0
           </Heading>
-          <Text>JSX Object Spread</Text>
-          <Text>React.createFactory</Text>
-          <Text>React.render instead of React.renderComponent</Text>
-          <Text>Lower-cased tags are now treated as DOM elements, upper-cased as composite components</Text>
-          <Text>JSX Pragma no longer required</Text>
+          <Text textColor="secondary">JSX Object Spread</Text>
+          <Text textColor="secondary">React.createFactory</Text>
+          <Text textColor="secondary">React.render instead of React.renderComponent</Text>
+          <Text textColor="secondary">Lower-cased tags are now treated as DOM elements, upper-cased as composite components</Text>
+          <Text textColor="secondary">JSX Pragma no longer required</Text>
           <Notes>
-
+            TODO: needs notes and examples
           </Notes>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={2} textColor="secondary">
+            Nov 26, 2014: react-router
+          </Heading>
+          <Text textColor="secondary">First Tag</Text>
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
           <Heading size={2} lineHeight={2} textColor="secondary">
             January 28-29 React.js Conf 2015
           </Heading>
-          <Text>React Native</Text>
-          <Text>GraphQL</Text>
-          <Text>Relay</Text>
+          <Text textColor="secondary">React Native</Text>
+          <Text textColor="secondary">GraphQL</Text>
+          <Text textColor="secondary">Relay</Text>
           <Notes>
-
+            TODO: needs notes
           </Notes>
         </Slide>
 
@@ -342,14 +349,14 @@ export default class Presentation extends React.Component {
             March 10, 2015: 0.13.0
           </Heading>
 
-          <Text>Calls to setState in life-cycle methods are now always batched and therefore asynchronous</Text>
-          <Text>Mutating props after an element is created is deprecated and will cause warnings</Text>
-          <Text>Support for using ES6 classes</Text>
-          <Text>React.findDOMNode</Text>
-          <Text>setState callback</Text>
-          <Text>React.addons.classSet deprecated, classnames module introduced</Text>
+          <Text textColor="secondary">Calls to setState in life-cycle methods are now always batched and therefore asynchronous</Text>
+          <Text textColor="secondary">Mutating props after an element is created is deprecated and will cause warnings</Text>
+          <Text textColor="secondary">Support for using ES6 classes</Text>
+          <Text textColor="secondary">React.findDOMNode</Text>
+          <Text textColor="secondary">setState callback</Text>
+          <Text textColor="secondary">React.addons.classSet deprecated, classnames module introduced</Text>
           <Notes>
-
+            TODO: needs notes and examples
           </Notes>
         </Slide>
 
@@ -358,7 +365,7 @@ export default class Presentation extends React.Component {
             June 2, 2015: Redux
           </Heading>
           <Notes>
-
+            TODO: needs notes
           </Notes>
         </Slide>
         <Slide transition={['zoom']} bgColor="primary">
@@ -366,7 +373,7 @@ export default class Presentation extends React.Component {
             Sept 14, 2015: React Native for Android
           </Heading>
           <Notes>
-
+            TODO: needs notes
           </Notes>
         </Slide>
 
@@ -375,13 +382,13 @@ export default class Presentation extends React.Component {
             October 7, 2015: 0.14.0
           </Heading>
 
-          <Text>Stateless functional Components</Text>
-          <Text>react-dom</Text>
-          <Text>Separate packages for react addons</Text>
-          <Text>React.initializeTouchEvents</Text>
-          <Text>Deprecated react-tools in favor of babel</Text>
+          <Text textColor="secondary">Stateless functional Components</Text>
+          <Text textColor="secondary">react-dom</Text>
+          <Text textColor="secondary">Separate packages for react addons</Text>
+          <Text textColor="secondary">React.initializeTouchEvents</Text>
+          <Text textColor="secondary">Deprecated react-tools in favor of babel</Text>
           <Notes>
-
+            TODO: needs notes and examples
           </Notes>
         </Slide>
         <Slide transition={['zoom']} bgColor="primary">
@@ -389,11 +396,11 @@ export default class Presentation extends React.Component {
             April 7, 2016: 15.0.0
           </Heading>
 
-          <Text>Goodbye data-reactid</Text>
-          <Text>Goodbye extra spans</Text>
-          <Text>All SVG tags supported</Text>
+          <Text textColor="secondary">Goodbye data-reactid</Text>
+          <Text textColor="secondary">Goodbye extra spans</Text>
+          <Text textColor="secondary">All SVG tags supported</Text>
           <Notes>
-
+            TODO: needs notes and examples
           </Notes>
         </Slide>
 
@@ -402,11 +409,11 @@ export default class Presentation extends React.Component {
             July 22, 2016: create-react-app
           </Heading>
 
-          <Text></Text>
-          <Text></Text>
-          <Text></Text>
+          <Text textColor="secondary"></Text>
+          <Text textColor="secondary"></Text>
+          <Text textColor="secondary"></Text>
           <Notes>
-
+            TODO: needs notes
           </Notes>
         </Slide>
 
@@ -415,10 +422,10 @@ export default class Presentation extends React.Component {
             July 29, 2016: 15.3.0
           </Heading>
 
-          <Text>React.PureComponent</Text>
-          <Text>React Test Renderer</Text>
+          <Text textColor="secondary">React.PureComponent</Text>
+          <Text textColor="secondary">React Test Renderer</Text>
           <Notes>
-
+            TODO: needs notes and examples
           </Notes>
         </Slide>
 
@@ -427,6 +434,7 @@ export default class Presentation extends React.Component {
             March 16, 2017: prop-types
           </Heading>
           <Notes>
+            TODO: needs notes and examples
             I gave the React team the prop-types repo
           </Notes>
         </Slide>
@@ -435,9 +443,9 @@ export default class Presentation extends React.Component {
           <Heading size={2} lineHeight={2} textColor="secondary">
             June 13, 2017: 15.6.0
           </Heading>
-          <Text>Deprecation warnings for React.createClass</Text>
+          <Text textColor="secondary">Deprecation warnings for React.createClass</Text>
           <Notes>
-
+            TODO: needs notes
           </Notes>
         </Slide>
 
@@ -445,9 +453,9 @@ export default class Presentation extends React.Component {
           <Heading size={2} lineHeight={2} textColor="secondary">
             September 25, 2017: 15.6.2
           </Heading>
-          <Text>Switched from BSD + Patents to MIT license</Text>
+          <Text textColor="secondary">Switched from BSD + Patents to MIT license</Text>
           <Notes>
-
+            TODO: needs notes
           </Notes>
         </Slide>
 
@@ -455,14 +463,14 @@ export default class Presentation extends React.Component {
           <Heading size={2} lineHeight={2} textColor="secondary">
             September 26, 2017: 16.0.0
           </Heading>
-          <Text>Rendering of arrays and strings from `render`</Text>
-          <Text>Error Boundaries</Text>
-          <Text>Portals</Text>
-          <Text>Server-side stream rendering</Text>
-          <Text>Fragments</Text>
-          <Text>Major Deprecations Removed</Text>
+          <Text textColor="secondary">Rendering of arrays and strings from `render`</Text>
+          <Text textColor="secondary">Error Boundaries</Text>
+          <Text textColor="secondary">Portals</Text>
+          <Text textColor="secondary">Server-side stream rendering</Text>
+          <Text textColor="secondary">Fragments</Text>
+          <Text textColor="secondary">Major Deprecations Removed</Text>
           <Notes>
-
+            TODO: needs notes and examples
           </Notes>
         </Slide>
 
@@ -470,9 +478,9 @@ export default class Presentation extends React.Component {
           <Heading size={2} lineHeight={2} textColor="secondary">
             November 9, 2017: 16.1.0
           </Heading>
-          <Text>No more Bower releases</Text>
+          <Text textColor="secondary">No more Bower releases</Text>
           <Notes>
-
+            TODO: needs notes
           </Notes>
         </Slide>
 
@@ -480,14 +488,14 @@ export default class Presentation extends React.Component {
           <Heading size={2} lineHeight={2} textColor="secondary">
             March 29, 2018: 16.3.0
           </Heading>
-          <Text>Officially supported Context API</Text>
-          <Text>React.createRef</Text>
-          <Text>React.forwardRef</Text>
-          <Text>getDerivedStateFromProps</Text>
-          <Text>React.StrictMode</Text>
-          <Text>React.unstable_AsyncMode to support suspense</Text>
+          <Text textColor="secondary">Officially supported Context API</Text>
+          <Text textColor="secondary">React.createRef</Text>
+          <Text textColor="secondary">React.forwardRef</Text>
+          <Text textColor="secondary">getDerivedStateFromProps</Text>
+          <Text textColor="secondary">React.StrictMode</Text>
+          <Text textColor="secondary">React.unstable_AsyncMode to support suspense</Text>
           <Notes>
-
+            TODO: needs notes and examples
           </Notes>
         </Slide>
 
@@ -495,10 +503,10 @@ export default class Presentation extends React.Component {
           <Heading size={2} lineHeight={2} textColor="secondary">
             February 6, 2019: 16.8.0
           </Heading>
-          <Text>Hooks</Text>
-          <Text>React.lazy</Text>
+          <Text textColor="secondary">Hooks</Text>
+          <Text textColor="secondary">React.lazy</Text>
           <Notes>
-
+            TODO: needs notes and examples
           </Notes>
         </Slide>
 
