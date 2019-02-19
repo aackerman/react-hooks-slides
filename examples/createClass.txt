@@ -1,0 +1,8 @@
+var Sandwich = React.createClass({
+  getInitialState: function() {
+    return { ingredients: ['ham', 'bread', 'mustard', 'cheese'] }
+  },
+  render: function() {
+
+  }
+})
