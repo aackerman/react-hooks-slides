@@ -1,8 +1,19 @@
-var Sandwich = React.createClass({
-  getInitialState: function() {
-    return { ingredients: ['ham', 'bread', 'mustard', 'cheese'] }
-  },
-  render: function() {
+var React = require('react')
+var Bread = require('./Bread')
+var Mustard = require('./Mustard')
+var Cheese = require('./Cheese')
+var Ham = require('./Ham')
 
+var Sandwich = React.createClass({
+  render: function() {
+    return (
+      <Bread>
+        <Mustard />
+        <Cheese />
+        <Ham />
+      </Bread>
+    )
   }
 })
+
+module.exports = Sandwich

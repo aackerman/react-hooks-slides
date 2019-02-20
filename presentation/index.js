@@ -24,8 +24,7 @@ import createClass from 'raw-loader!../examples/createClass.txt'
 import createTheme from 'spectacle/lib/themes/default';
 
 const images = {
-  formidagon: require('../assets/formidable-logo.svg'),
-  goodWork: require('../assets/good-work.gif')
+  createClass: require('../assets/createClass.png'),
 };
 
 // Require CSS
@@ -62,8 +61,7 @@ export default class Presentation extends React.Component {
           <Notes>
             <p>Hello, I'm Aaron Ackerman.</p>
             <p>I've been working with React for about 5 years.</p>
-            <p>When those job posting ask for 5 years of experience with React, I actually qualify.</p>
-            <p>Tonight we're going to whirlwind through how React has changed since its release.</p>
+            <p>Tonight we're going to whirlwind through how React has changed since its release</p>
           </Notes>
         </Slide>
 
@@ -106,7 +104,7 @@ export default class Presentation extends React.Component {
           <Text textColor="secondary">lifecycle</Text>
           <Text textColor="secondary">events</Text>
           <Text textColor="secondary">rendering</Text>
-          <Text textColor="secondary">JSX</Text>
+          <Text textColor="secondary">jsx</Text>
           <Notes>
             <p>The fundamentals of React have been there from the beginning. Props, State, lifecycle methods, events, rendering, and JSX.</p>
             <p>The forms have slightly changed over time as React has changed, but the underpinnings were in place from the beginning</p>
@@ -120,35 +118,84 @@ export default class Presentation extends React.Component {
           </Heading>
           <Notes>
             <p>React.createClass</p>
-            <p>createClass had some implementation details that are different than we see today but the basic are still the same</p>
+            <p>createClass had a few lifecycle methods that aren't around anymore</p>
+          </Notes>
+        </Slide>
 
-            <p>It goes to show that the ideas surrounding React were more important than the specifics of the implementation.</p>
+        <Slide>
+          <img style={{ maxHeight: '700px' }} src={images.createClass} />
+          <Notes>
+           <p>createClass looked a lot like this, you can see I'm making a ham sandwich with mustard and cheese</p>
+           <p>And you can see that I went for real nostalgia here by using var declarations and classic require syntax</p>
 
-            <p>React.createClass has a few lifecycle methods that aren't necessary with like getInitialState and getDefaultProps</p>
-            <p>createClass had mixins</p>
+            <p>createClass had a few lifecycle methods that aren't around anymore</p>
           </Notes>
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          // TODO fill slide
+          <Heading size={4} lineHeight={1} textFont="monospace" textColor="secondary">
+            getInitialState
+          </Heading>
+          <Heading size={4} lineHeight={1} textFont="monospace" textColor="secondary">
+            getDefaultProps
+          </Heading>
+          <Heading size={4} lineHeight={1} textFont="monospace" textColor="secondary">
+            mixins
+          </Heading>
+
+          <Notes>
+            <p>getInitialState and getDefaultProps</p>
+            <p>In class components, defaultProps is a static property on the class and initial state is defined in the constructor</p>
+            <p>createClass had mixins</p>
+            <p>mixins were a way to share functionality</p>
+            <p>There is no direct form of mixins in newer versions of react. Mixins as a solution behave more like inheritance with subclassing in an object oriented class based language. Newer solutions favor composition in a couple different forms, specifically higher order components, render props, and hooks</p>
+
+            <p>When React was first released, people focused on some phrasing that was used by the React team</p>
+          </Notes>
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
           <Heading size={2} lineHeight={1} textColor="secondary">
             Virtual DOM
           </Heading>
+
+          <Notes>
+            <p>Virtual DOM</p>
+            <p>The part of React that handles the Virtual DOM the React team calls the reconciler</p>
+            <p>That part of the code is responsible for keeping a representation of the DOM in memory understanding the differences between the desired state of the DOM and the current state of the DOM and applying changes</p>
+            <p>The idea of the Virtual DOM turned out to be so unimportant to actually *using* React that there is not one mention of the word virtual and DOM together in the codebase today</p>
+
+            <p>When React was released the project used a special comment to identify files that should be compiled with JSX</p>
+          </Notes>
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={1} textFont="monospace" textColor="secondary">
+          <Heading size={4} lineHeight={2} textFont="monospace" textColor="secondary">
             /** @jsx React.DOM */
           </Heading>
+          <Heading size={4} lineHeight={2} textFont="monospace" textColor="secondary">
+            React.DOM.div
+          </Heading>
+          <Heading size={4} lineHeight={2} textFont="monospace" textColor="secondary">
+            React.DOM.span
+          </Heading>
+
+          <Notes>
+            <p>That's the first line you can see here, the JSX pragma. It was comment that starts with @jsx and then React.DOM. This lines up with how JSX was compiled in early versions of React. It was common to be creating a react file with JSX, forget to add that comment to your file and have absolutely no idea why the file wouldn't compile and you would notice the problem or bring over someone else, or even post on stack overflow, but eventually you copy pasted the answer, because nobody types that out from scratch.</p>
+
+            <p>It's common today to use Babel to compile projects with new syntax that is unsupported in modern browsers or modern syntax that is supported in older browsers</p>
+            <p>JSX itself isn't a standard JavaScript syntax so natually it needs to be compiled to JavaScript. In 2013 the tool that was used to do this was the [trigger slide]</p>
+          </Notes>
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
           <Heading size={2} lineHeight={1} textFont="monospace" textColor="secondary">
             react-tools
           </Heading>
+
+          <Notes>
+            react-tools project. It was a project that you can still find on npm and it would compile separate JSX files to standard ES5 JavaScript files. And that was what you had to use because Babel didn't even exist and this is what they were using at Facebook.
+          </Notes>
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
@@ -167,18 +214,31 @@ export default class Presentation extends React.Component {
             Key Props
           </Heading>
           <Text textFont="monospace" textColor="secondary">{'<div key={id} />'}</Text>
+
+          <Notes>
+            <p>Key props are still a thing. But, they weren't present in the library until after it was publicly released. I still commonly see warnings for key props that I've mapped over a list of elements and the array of elements is missing keys.</p>
+            <p>If you're unfamiliar with key props, they are used by react to determine if the ordering of elements is the same after an update, and just remember to not use array indexes for your key props</p>
+          </Notes>
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
           <Heading size={2} lineHeight={2} textColor="secondary">
             Not all elements were supported
           </Heading>
+
+          <Notes>
+            In the early days of react not all elements were supported. People would attempt to use DOM elements that weren't supported, the elements wouldn't render and they would end up filing an issue on GitHub.
+          </Notes>
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
           <Heading size={2} lineHeight={2} textColor="secondary">
             Synthetic Event System
           </Heading>
+          <Notes>
+            <p>You may still be unaware that React is powered by a synthetic event system</p>
+            <p>This means that React is normalizing event properties and behavior across different browsers to provide a consistent developer experience</p>
+          </Notes>
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
@@ -187,7 +247,10 @@ export default class Presentation extends React.Component {
           </Heading>
 
           <Notes>
-            React provides a consistent onChange event for all elements that behave as form inputs. This is differs from the behavior that the native DOM interface provides, but at least it provides some consistency to the user.
+            <p>React provides a consistent onChange event for all elements that behave as form inputs. This is differs from the behavior that the native DOM interface provides, but at least it provides some consistency to the user.</p>
+            <p>The native DOM onchange event for an input element will trigger when the a user clicks outside the input or tabs to another element</p>
+            <p>The onChange behavior in React is closer to the native oninput callback that can be attached to input elements where the callback is called everytime the value changes</p>
+            <p>The consistency of the onChange event is a part of React that I value, I don't have to know about the difference between oninput and onchange. There's only one option to use.</p>
           </Notes>
         </Slide>
 
