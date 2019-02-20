@@ -63,6 +63,7 @@ export default class Presentation extends React.Component {
             <p>Hello, I'm Aaron Ackerman.</p>
             <p>I've been working with React for about 5 years.</p>
             <p>Tonight we're going to whirlwind through how React has changed since its release</p>
+            <p>I'm definitely going to leave a bunch out, and it's totally subjective what I decided to leave out. I had about 10 days to prepare this talk and I would have loved to spend more time on it, but we're already here :)</p>
           </Notes>
         </Slide>
 
@@ -399,7 +400,8 @@ export default class Presentation extends React.Component {
           <Text textColor="secondary">{'<dialog> and <picture> elements'}</Text>
           <Text textColor="secondary">React.createElement API introduced</Text>
           <Notes>
-            TODO: needs notes and examples
+            <p>More support for new elements, we the get dialog and picture elements</p>
+            <p>The createElement API is created to replace the element factories that look like React.DOM.div and React.DOM.span, instead you either pass the class of the component to instantiate or the string of a native DOM element like a div or a span</p>
           </Notes>
         </Slide>
 
@@ -408,12 +410,10 @@ export default class Presentation extends React.Component {
             October 28, 2014: 0.12.0
           </Heading>
           <Text textColor="secondary">JSX Object Spread</Text>
-          <Text textColor="secondary">React.createFactory</Text>
-          <Text textColor="secondary">React.render instead of React.renderComponent</Text>
-          <Text textColor="secondary">Lower-cased tags are now treated as DOM elements, upper-cased as composite components</Text>
           <Text textColor="secondary">JSX Pragma no longer required</Text>
+
           <Notes>
-            TODO: needs notes and examples
+            Late 2014, brought some great things to React. Object spread in JSX allowed people to pass props to a component without specifying every single field that was coming through. And it was familiar to rest/spread syntax for JavaScript arrays. This feature was so good in JSX that it is now included in the 2018 version of the spec.
           </Notes>
         </Slide>
 
