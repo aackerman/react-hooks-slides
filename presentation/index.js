@@ -325,7 +325,7 @@ export default class Presentation extends React.Component {
           <Text textColor="secondary">Support for more events</Text>
           <Text textColor="secondary">Support for more DOM properties</Text>
           <Notes>
-            In December of 2013 the team released 0.8.0. This was a smaller release that didn't have a lot of notable features.
+            In December of 2013 the team released 0.8.0. This was a smaller release that didn't have a lot of notable features. The 0.6.0 and 0.7.0 releases were skipped in the changelog so I didn't dig into them.
           </Notes>
         </Slide>
 
@@ -336,7 +336,8 @@ export default class Presentation extends React.Component {
           <Text textColor="secondary">React Developer Tools</Text>
 
           <Notes>
-            The React developer tools were released in 2014. I honestly didn't know that they had been around for that long. The dev tools extension has been a great addition from the beginning and have only improved along way with React.
+            <p>The React developer tools were released in 2014</p>
+            <p>I honestly didn't know that they had been around for that long. The dev tools extension has been a great addition from the beginning and have only improved along way with React.</p>
           </Notes>
         </Slide>
 
@@ -351,7 +352,7 @@ export default class Presentation extends React.Component {
           <Text textColor="secondary">React.addons.CSSTransitionGroup</Text>
           <Text textColor="secondary">Component.displayName</Text>
           <Notes>
-            TODO: needs notes and examples
+            The 0.9.0 release in February 5 years ago, came along with ReactTestUtils and component displayName. TestUtils has been important for exactly the reason it's named the way it is, for testing. Component displayName is something that most people don't worry about, these days the babel JSX transform will handle adding a displayName to component where the name is easy to figure out. But the displayName is important for react-dev-tools and being able to understand the component hierarchy at a glance.
           </Notes>
         </Slide>
 
@@ -359,10 +360,11 @@ export default class Presentation extends React.Component {
           <Heading size={4} lineHeight={2} textColor="secondary">
             March 21, 2014: 0.10.0
           </Heading>
+          <Text textColor="secondary">Support for more SVG tags</Text>
           <Text textColor="secondary">Support for more DOM properties/attributes</Text>
           <Text textColor="secondary">React.addons.update</Text>
           <Notes>
-            TODO: needs notes and examples
+            March 2014 brought the 0.10.0 release with support for more SVG and DOM callbacks like onLoad for img tags. As well as the addon for performing deep updates on objects that often need to happen for setState
           </Notes>
         </Slide>
 
@@ -370,9 +372,9 @@ export default class Presentation extends React.Component {
           <Heading size={4} lineHeight={2} textColor="secondary">
             July 13, 2014
           </Heading>
-          <Text textColor="secondary">react-hot-loader</Text>
+          <Text textColor="secondary">react-hot-loader 🔥</Text>
           <Notes>
-            TODO: needs notes and examples
+            <p>In July 2014 Dan Abramov, who works on the React team at Facebook, released a project called react-hot-loader. If you're not familiar with react-hot-loader it's a fun project that takes advantage of the hot coad reloading functionality in webpack where code is updated in place without having the refresh the browser. Normally without react-hot-loader any components would lose their local component state. When you use react-hot-loader you can take advantage of not losing that state and not having to possibly go through several clicks to get the app to the state you want it to be in</p>
           </Notes>
         </Slide>
 
@@ -386,7 +388,7 @@ export default class Presentation extends React.Component {
           <Text textColor="secondary">Support for more DOM properties/attributes</Text>
           <Text textColor="secondary">Improved SVG support</Text>
           <Notes>
-            TODO: needs notes and examples
+            Before July 2014 a component had to render a DOM element, they couldn't effectively render nothing.
           </Notes>
         </Slide>
 
@@ -419,7 +421,6 @@ export default class Presentation extends React.Component {
           <Heading size={4} lineHeight={2} textColor="secondary">
             Nov 26, 2014: react-router
           </Heading>
-          <Text textColor="secondary">First Tag</Text>
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
@@ -430,7 +431,8 @@ export default class Presentation extends React.Component {
           <Text textColor="secondary">GraphQL</Text>
           <Text textColor="secondary">Relay</Text>
           <Notes>
-            TODO: needs notes
+            <p>React.js Conf 2015 was very exciting</p>
+            I didn't get to go personally, but some very impactful projects were released at the conference. React Native for iOS was released to be able to use JavaScript Core and a wire protocol to be able to communicate between JavaScript and native Objective-C and Swift and create full featured iOS apps with React. This was and still is awesome, I don't know Objective-C or Swift and I could probably create an app using React Native and deploy it to the app store.
           </Notes>
         </Slide>
 
@@ -535,7 +537,7 @@ export default class Presentation extends React.Component {
           </Heading>
           <Text textColor="secondary">Deprecation warnings for React.createClass</Text>
           <Notes>
-            TODO: needs notes
+            createClass was one of the first features that we talked about. In 15.6.0 the team added deprecation warnings when using createClass. The team did something great with this though, they provided a separate package called create-react-class that allowed using the same functionality. And secondly they provided a codemod, or an automated script that would analyze all of the JavaScript files in your project and update them to use this new separate package. So they didn't require anyone to hand rewrite files or write some terrible regex to change out these calls. They provided a very stable upgrade path.
           </Notes>
         </Slide>
 
@@ -545,7 +547,7 @@ export default class Presentation extends React.Component {
           </Heading>
           <Text textColor="secondary">Switched from BSD + Patents to MIT license</Text>
           <Notes>
-            TODO: needs notes
+            There was a lot of anxiety in the community about how React was licensed. In some case companies were unwilling to use React just based on the wording of the specific patents clause that React was licensed with. To prevent a lot of bikeshedding around the licensing project they switched to the very permissive MIT license. This was a great move because there were likely a number of companies that were using the licensing as their last objection to using React within their organization.
           </Notes>
         </Slide>
 
@@ -561,16 +563,6 @@ export default class Presentation extends React.Component {
           <Text textColor="secondary">Major Deprecations Removed</Text>
           <Notes>
             TODO: needs notes and examples
-          </Notes>
-        </Slide>
-
-        <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={4} lineHeight={2} textColor="secondary">
-            November 9, 2017: 16.1.0
-          </Heading>
-          <Text textColor="secondary">No more Bower releases</Text>
-          <Notes>
-            TODO: needs notes
           </Notes>
         </Slide>
 
