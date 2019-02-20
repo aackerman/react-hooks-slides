@@ -60,7 +60,7 @@ React Across Time
   * setState callback
   * React.addons.classSet deprecated, classnames module introduced
 * June 2: Redux
-* Sept 14: React Native for Android
+* Sept 14, 2015: React Native for Android
 * 0.14.0 (October 7, 2015)
   * Stateless functional Components
   * react-dom package introduced to separate react-core and dom handling
