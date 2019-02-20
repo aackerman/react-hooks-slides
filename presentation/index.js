@@ -87,10 +87,10 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
-            May 29, 2013
+          <Heading size={4} lineHeight={2} textColor="secondary">
+            May 29, 2013: 0.3.0
           </Heading>
-          <Text textColor="secondary">Initial public release 0.3.0</Text>
+          <Text textColor="secondary">Initial public release</Text>
           <Notes>
             <p>It didn't strike me as a big event at the time.</p>
             <p>I saw plenty of tweets and reactions to the release, but React has done a lot to shape how I've built web applications and the landscape of web application development as a whole</p>
@@ -113,7 +113,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={1} textFont="monospace" textColor="secondary">
+          <Heading size={4} lineHeight={1} textFont="monospace" textColor="secondary">
             React.createClass
           </Heading>
           <Notes>
@@ -155,7 +155,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={1} textColor="secondary">
+          <Heading size={4} lineHeight={1} textColor="secondary">
             Virtual DOM
           </Heading>
 
@@ -199,18 +199,16 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
-            July 17, 2013
+          <Heading size={4} lineHeight={2} textColor="secondary">
+            July 17, 2013: 0.4.0
           </Heading>
-          <Text textColor="secondary">0.4.0</Text>
-
           <Notes>
             I'm going to start getting into some of the releases and the features that went along with them. I'm not going to call out all of the features, but I will bring up the notable ones. And I'm going to skip bug fixes entirely. There are a lot of bug fixes that go into each release.
           </Notes>
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
+          <Heading size={4} lineHeight={2} textColor="secondary">
             Key Props
           </Heading>
           <Text textFont="monospace" textColor="secondary">{'<div key={id} />'}</Text>
@@ -222,8 +220,8 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
-            Not all elements were supported
+          <Heading size={4} lineHeight={2} textColor="secondary">
+            Some elements not supported
           </Heading>
 
           <Notes>
@@ -232,7 +230,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
+          <Heading size={4} lineHeight={2} textColor="secondary">
             Synthetic Event System
           </Heading>
           <Notes>
@@ -242,7 +240,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
+          <Heading size={4} lineHeight={2} textColor="secondary">
             Consistent onChange event
           </Heading>
 
@@ -255,7 +253,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
+          <Heading size={4} lineHeight={2} textColor="secondary">
             React with Add-ons
           </Heading>
 
@@ -266,7 +264,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
+          <Heading size={4} lineHeight={2} textColor="secondary">
             #id to data-reactid
           </Heading>
 
@@ -276,11 +274,10 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
-            0.5.0 (October 16, 2013)
+          <Heading size={4} lineHeight={2} textColor="secondary">
+            October 16, 2013: 0.5.0
           </Heading>
-          <Text textColor="secondary">class => className removed from react-tools</Text>
-
+          <Text textColor="secondary">class to className removed from react-tools</Text>
           <Text textColor="secondary">Support for more events</Text>
           <Text textColor="secondary">Support for more DOM properties</Text>
 
@@ -292,8 +289,8 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
-            0.8.0 (December 19, 2013)
+          <Heading size={4} lineHeight={2} textColor="secondary">
+            December 19, 2013: 0.8.0
           </Heading>
           <Text textColor="secondary">Support for more events</Text>
           <Text textColor="secondary">Support for more DOM properties</Text>
@@ -303,7 +300,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
+          <Heading size={4} lineHeight={2} textColor="secondary">
             January 2, 2014
           </Heading>
           <Text textColor="secondary">React Developer Tools</Text>
@@ -314,7 +311,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
+          <Heading size={4} lineHeight={2} textColor="secondary">
             February 20, 2014: 0.9.0
           </Heading>
           <Text textColor="secondary">Support for more events/callbacks</Text>
@@ -329,7 +326,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
+          <Heading size={4} lineHeight={2} textColor="secondary">
             March 21, 2014: 0.10.0
           </Heading>
           <Text textColor="secondary">Support for more DOM properties/attributes</Text>
@@ -340,7 +337,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
+          <Heading size={4} lineHeight={2} textColor="secondary">
             July 13, 2014
           </Heading>
           <Text textColor="secondary">react-hot-loader</Text>
@@ -350,7 +347,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
+          <Heading size={4} lineHeight={2} textColor="secondary">
             July 17, 2014: 0.11.0
           </Heading>
           <Text textColor="secondary">{'Rendering null vs <div/>'}</Text>
@@ -364,7 +361,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
+          <Heading size={4} lineHeight={2} textColor="secondary">
             September 16, 2014: 0.11.2
           </Heading>
           <Text textColor="secondary">{'<dialog> and <picture> elements'}</Text>
@@ -375,7 +372,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
+          <Heading size={4} lineHeight={2} textColor="secondary">
             October 28, 2014: 0.12.0
           </Heading>
           <Text textColor="secondary">JSX Object Spread</Text>
@@ -389,14 +386,14 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
+          <Heading size={4} lineHeight={2} textColor="secondary">
             Nov 26, 2014: react-router
           </Heading>
           <Text textColor="secondary">First Tag</Text>
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
+          <Heading size={4} lineHeight={2} textColor="secondary">
             January 28-29 React.js Conf 2015
           </Heading>
           <Text textColor="secondary">React Native</Text>
@@ -408,7 +405,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
+          <Heading size={4} lineHeight={2} textColor="secondary">
             March 10, 2015: 0.13.0
           </Heading>
 
@@ -424,7 +421,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
+          <Heading size={4} lineHeight={2} textColor="secondary">
             June 2, 2015: Redux
           </Heading>
           <Notes>
@@ -432,7 +429,7 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
+          <Heading size={4} lineHeight={2} textColor="secondary">
             Sept 14, 2015: React Native for Android
           </Heading>
           <Notes>
@@ -441,7 +438,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
+          <Heading size={4} lineHeight={2} textColor="secondary">
             October 7, 2015: 0.14.0
           </Heading>
 
@@ -455,7 +452,7 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
+          <Heading size={4} lineHeight={2} textColor="secondary">
             April 7, 2016: 15.0.0
           </Heading>
 
@@ -468,7 +465,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
+          <Heading size={4} lineHeight={2} textColor="secondary">
             July 22, 2016: create-react-app
           </Heading>
 
@@ -481,7 +478,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
+          <Heading size={4} lineHeight={2} textColor="secondary">
             July 29, 2016: 15.3.0
           </Heading>
 
@@ -493,7 +490,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
+          <Heading size={4} lineHeight={2} textColor="secondary">
             March 16, 2017: prop-types
           </Heading>
           <Notes>
@@ -503,7 +500,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
+          <Heading size={4} lineHeight={2} textColor="secondary">
             June 13, 2017: 15.6.0
           </Heading>
           <Text textColor="secondary">Deprecation warnings for React.createClass</Text>
@@ -513,7 +510,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
+          <Heading size={4} lineHeight={2} textColor="secondary">
             September 25, 2017: 15.6.2
           </Heading>
           <Text textColor="secondary">Switched from BSD + Patents to MIT license</Text>
@@ -523,7 +520,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
+          <Heading size={4} lineHeight={2} textColor="secondary">
             September 26, 2017: 16.0.0
           </Heading>
           <Text textColor="secondary">Rendering of arrays and strings from `render`</Text>
@@ -538,7 +535,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
+          <Heading size={4} lineHeight={2} textColor="secondary">
             November 9, 2017: 16.1.0
           </Heading>
           <Text textColor="secondary">No more Bower releases</Text>
@@ -548,7 +545,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
+          <Heading size={4} lineHeight={2} textColor="secondary">
             March 29, 2018: 16.3.0
           </Heading>
           <Text textColor="secondary">Officially supported Context API</Text>
@@ -563,7 +560,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
+          <Heading size={4} lineHeight={2} textColor="secondary">
             February 6, 2019: 16.8.0
           </Heading>
           <Text textColor="secondary">Hooks</Text>
@@ -574,7 +571,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={2} textColor="secondary">
+          <Heading size={4} lineHeight={2} textColor="secondary">
             Conclusions
           </Heading>
 
