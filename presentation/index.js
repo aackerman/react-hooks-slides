@@ -76,7 +76,10 @@ export default class Presentation extends React.Component {
             <p>Hello, I'm Aaron Ackerman.</p>
             <p>I've been working with React for about 5 years.</p>
             <p>Tonight we're going to whirlwind through how React has changed since its release</p>
-            <p>I'm definitely going to leave a bunch out, and it's totally subjective what I decided to leave out. I had about 10 days to prepare this talk and I would have loved to spend more time on it, and just to be clear many of these examples are screenshotted from the react documentation, so props to anyone who has worked on those.</p>
+            <p>I'm definitely going to leave a bunch out, and it's totally subjective to the time that I had to prepare the talk. I've screenshotted several code examples straight from the React docs so you might recognize them.</p>
+            <p>I have a very strong tendency to go very fast with these thing, if you think that I'm going too fast, please yell out you're going to fast.</p>
+            <p>Do a 1,2,3 and have everyone say you're going too fast</p>
+            <p>Let's get started</p>
           </Notes>
         </Slide>
 
@@ -108,7 +111,7 @@ export default class Presentation extends React.Component {
           <Text textColor="secondary">Initial public release</Text>
           <Notes>
             <p>It didn't strike me as a big event at the time.</p>
-            <p>I saw plenty of tweets and reactions both positive and negavite, but nobody can deny that React has done a lot to shape the landscape of web and mobile application development</p>
+            <p>I saw plenty of tweets and reactions both positive and negative, but nobody can deny that React has done a lot to shape the landscape of web and mobile application development</p>
             <p>The first version of React shipped with some base fundamentals</p>
           </Notes>
         </Slide>
@@ -122,8 +125,8 @@ export default class Presentation extends React.Component {
           <Text textColor="secondary">jsx</Text>
           <Notes>
             <p>Props, State, lifecycle methods, events, rendering, and JSX.</p>
-            <p>The forms have slightly changed over time as React has changed, but the underpinnings were in place from the beginning</p>
-            <p>In the first release when the only way to render was to use...</p>
+            <p>The forms of these have changed over time as React has changed, but the underpinnings were in place from the beginning</p>
+            <p>In the first release the only way to render was to use...</p>
           </Notes>
         </Slide>
 
@@ -131,7 +134,7 @@ export default class Presentation extends React.Component {
           <img style={{ maxHeight: '700px' }} src={images.createClass} />
           <Notes>
             <p>React.createClass</p>
-            <p>It looked a lot like this, you can see I'm making a ham sandwich with mustard and cheese</p>
+            <p>It looked a lot like this, you can see I'm making a ham sandwich with mustard and cheese, components could render other components</p>
             <p>And you can see that I went for real nostalgia here by using var declarations and classic require syntax</p>
             <p>createClass had a few parts that aren't around anymore</p>
           </Notes>
@@ -150,11 +153,11 @@ export default class Presentation extends React.Component {
 
           <Notes>
             <p>getInitialState and getDefaultProps</p>
-            <p>In class components, defaultProps is a static property on the class and initial state is defined in the constructor</p>
-            <p>createClass had these mixins and mixins were a way to share functionality, arguably a poor way to share functionality</p>
+            <p>In class components that are common now, defaultProps is a static property on the class and initial state is defined in the constructor, so there's no use for these methods anymore with ES2015 classes</p>
+            <p>createClass also supported mixins and mixins were a way to share functionality</p>
             <p>There is no direct form of mixins in newer versions of react, they were essentially removed entirely when the createClass form was deprecated.</p>
             <p>Newer solutions favor composition in a couple different forms, specifically higher order components, render props, and reusing hooks</p>
-
+            <p>We'll get into a couple of those later</p>
             <p>When React was first released, people focused on some phrasing that was used by the React team</p>
           </Notes>
         </Slide>
@@ -168,9 +171,22 @@ export default class Presentation extends React.Component {
             <p>Virtual DOM</p>
             <p>The part of React that handles the Virtual DOM the React team calls the reconciler</p>
             <p>That part of the code is responsible for keeping a representation of the DOM in memory understanding the differences between the desired state of the DOM and the current state of the DOM and applying changes</p>
-            <p>The idea of the Virtual DOM turned out to be so unimportant to actually *using* React that there is not one mention of the word virtual and DOM together in the codebase today</p>
+            <p>The idea of the Virtual DOM turned out to be so unimportant to actually *using* React that there is not one mention of the word virtual and DOM together in the codebase today, and there's one small section in the documentation</p>
 
-            <p>When React was released the project used a special comment to identify files that should be compiled with JSX</p>
+            <p>It's common today to use Babel to compile projects with new syntax that is unsupported in modern browsers or modern syntax that is supported in older browsers</p>
+            <p>JSX itself isn't a standard JavaScript syntax so natually it needs to be compiled to JavaScript. In 2013 the tool that was used to do this was the [trigger slide]</p>
+          </Notes>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={2} lineHeight={1} textFont="monospace" textColor="secondary">
+            react-tools
+          </Heading>
+
+          <Notes>
+            react-tools project. It was a project that you can still find on npm and it would compile separate JSX files to standard ES5 JavaScript files. And that was what you had to use because Babel didn't even exist and this is what they were using at Facebook.
+
+            <p>In earlier releases React used a special comment to identify files that should be compiled with JSX</p>
           </Notes>
         </Slide>
 
@@ -187,21 +203,9 @@ export default class Presentation extends React.Component {
 
           <Notes>
             <p>That's the first line you can see here, the JSX pragma. It was comment that starts with @jsx and then React.DOM. This lines up with how JSX was compiled in early versions of React. It was common to be creating a react file with JSX, forget to add that comment to your file and have absolutely no idea why the file wouldn't compile and you would notice the problem or bring over someone else, or even post on stack overflow, but eventually you copy pasted the answer, because nobody types that out from scratch.</p>
-
-            <p>It's common today to use Babel to compile projects with new syntax that is unsupported in modern browsers or modern syntax that is supported in older browsers</p>
-            <p>JSX itself isn't a standard JavaScript syntax so natually it needs to be compiled to JavaScript. In 2013 the tool that was used to do this was the [trigger slide]</p>
           </Notes>
         </Slide>
 
-        <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={2} lineHeight={1} textFont="monospace" textColor="secondary">
-            react-tools
-          </Heading>
-
-          <Notes>
-            react-tools project. It was a project that you can still find on npm and it would compile separate JSX files to standard ES5 JavaScript files. And that was what you had to use because Babel didn't even exist and this is what they were using at Facebook.
-          </Notes>
-        </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
           <Heading size={4} lineHeight={2} textColor="secondary">
@@ -531,7 +535,7 @@ export default class Presentation extends React.Component {
           <Text textColor="secondary">Goodbye extra spans</Text>
           <Text textColor="secondary">All SVG tags supported</Text>
           <Notes>
-            April 2016, big change here. The React team decided that a 1.0.0 release didn't make sense, so they cranked it up to 15.
+            April 2016, big change here. The React team decided that a 1.0.0 release didn't make sense, so they cranked it up to 15. I mentioned before about using data-reactid, so the rendered DOM was littered with these on every element rendered by React. But the team was able to find a way to remove these and clean up a little visual clutter that you would see in the elements pane of developer tools. Any text before this release was wrapped in spans, whether you put them there or not. And now that's not something you have to worry about. And finally all SVG tags are supported in 2016.
           </Notes>
         </Slide>
 
@@ -540,7 +544,7 @@ export default class Presentation extends React.Component {
             July 22, 2016: create-react-app
           </Heading>
           <Notes>
-            In July 2016 we got create-react-app. An absolutely fantastic project for starting a react project and I really can't think of using something else as a foundation.
+            In July 2016 we got create-react-app. An absolutely fantastic project for starting a react project and I really can't think of using something else as a foundation. If you haven't had the opportunity to use create-react-app it offers a great set of defaults for building a React project using webpack, babel, eslint, minification, and a number of other tools to guided you into the pit of success.
           </Notes>
         </Slide>
 
