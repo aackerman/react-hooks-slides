@@ -38,6 +38,7 @@ const images = {
   portal: require('../assets/portal.png'),
   fragment: require('../assets/fragment.png'),
   context: require('../assets/context.png'),
+  classes: require('../assets/classes.png'),
   portalGame: require('../assets/portalGame.jpg'),
 };
 
@@ -498,7 +499,13 @@ export default class Presentation extends React.Component {
 
             <p>There was an addons for conditionally creating a combination of css classes, the addon was deprecated but the functionality lives on in the classnames module.</p>
 
-            <p>The major point of these release though was support for class components, all of the ideas for rendering React components with classes were the same.</p>
+          </Notes>
+        </Slide>
+
+        <Slide>
+          <img style={{ maxWidth: '100%', maxHeight: '700px' }} src={images.classes} />
+          <Notes>
+            <p>The major point of these release though was support for class components. Class components provided all of same features that were provided by createClass, aside from mixins, and were also a more standard JavaScript construct it also afforded the opportunity to use inheritance if you so choose.</p>
           </Notes>
         </Slide>
 
@@ -507,7 +514,11 @@ export default class Presentation extends React.Component {
             June 2, 2015: Redux
           </Heading>
           <Notes>
-            Redux the project you probably all know, whether you like it or not. There was this idea of a flux architecture for React, in practice this usually meant global singleton in-memory stores than fired change events, they were global so different components in the component hierarchy were depending on exactly the same state and not two different copies of the same state that had the possibility of being out of sync. Redux kind of blew out of the water most of the other global state container projects and for many people became a de-facto standard. There are clearly many options and based on my interpretation of community sentiment redux has somewhat fallen out of favor and people are looking for a simpler option, but it is still a very popular project.
+            <p>Redux the project you probably all know, whether you like it or not. There was this idea of a flux architecture for React, in practice this usually meant global singleton in-memory stores than fired change events, they were global so different components in the component hierarchy were depending on exactly the same state and not two different copies of the same state that had the possibility of being out of sync.</p>
+            <p>Redux kind of blew out of the water most of the other global state container projects and for many people became a de-facto standard.</p>
+            <p>There are clearly many options and based on my interpretation of community sentiment redux has somewhat fallen out of favor and people are looking for a simpler option, but it is still a very popular project.</p>
+
+            <p>React Native for iOS was released in January 2015 [trigger slide]</p>
           </Notes>
         </Slide>
 
@@ -516,7 +527,7 @@ export default class Presentation extends React.Component {
             Sept 14, 2015<br/>React Native for Android
           </Heading>
           <Notes>
-            <p>React Native for iOS was released in January 2015 and the initial Android release was delayed until September. So at this point native applications could be built for iOS and Android by developers that know very little about the ecosystem of those platforms as long as they had knowledge of how to use React. Thus pushing the ethos that you can learn once and build everywhere.</p>
+            <p>and the initial Android release was delayed until September. So at this point native applications could be built for iOS and Android by developers that know very little about the ecosystem of those platforms as long as they had knowledge of how to use React. Thus pushing the ethos that you can learn once and build everywhere.</p>
           </Notes>
         </Slide>
 
@@ -542,8 +553,10 @@ export default class Presentation extends React.Component {
         <Slide>
           <img style={{ maxWidth: '100%', maxHeight: '700px' }} src={images.babel} />
           <Notes>
-            The last part of the 0.14.0 release that I thought was important was that react-tools, which was the project that people used to handle compiling JSX was deprecated.
-            react-tools was a Facebook project and the community buzz around using Babel was really heating up, so the React team decided to push for using Babel with a react preset to transform JSX and other JavaScript syntax. Deciding to use Babel was a great decision for everyone in the community and it meant that the React team could focus more on React instead of a tertiary project.
+            <p>The last part of the 0.14.0 release that I thought was important was that react-tools, which was the project that people used to handle compiling JSX was deprecated.</p>
+            <p>react-tools was a Facebook project and the community buzz around using Babel was really heating up, so the React team decided to push for using Babel with a react preset to transform JSX and other JavaScript syntax. Deciding to use Babel was a great decision for everyone in the community and it meant that the React team could focus more on React instead of a tertiary project.</p>
+
+            <p>April 2016, big change here [trigger slide]</p>
           </Notes>
         </Slide>
 
@@ -556,7 +569,7 @@ export default class Presentation extends React.Component {
           <Text textColor="secondary">Goodbye extra spans</Text>
           <Text textColor="secondary">All SVG tags supported</Text>
           <Notes>
-            April 2016, big change here. The React team decided that a 1.0.0 release didn't make sense, so they cranked it up to 15. I mentioned before about using data-reactid, so the rendered DOM was littered with these on every element rendered by React. But the team was able to find a way to remove these and clean up a little visual clutter that you would see in the elements pane of developer tools. Any text before this release was wrapped in spans, whether you put them there or not. And now that's not something you have to worry about. And finally all SVG tags are supported in 2016.
+            <p>The React team decided that a 1.0.0 release didn't make sense, so they cranked it up to 15. I mentioned before about using data-reactid, so the rendered DOM was littered with these on every element rendered by React. But the team was able to find a way to remove these and clean up a little visual clutter that you would see in the elements pane of developer tools. Any text before this release was wrapped in spans, whether you put them there or not. And now that's not something you have to worry about. And finally all SVG tags are supported in 2016.</p>
           </Notes>
         </Slide>
 
