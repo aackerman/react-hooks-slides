@@ -26,6 +26,12 @@ import createTheme from 'spectacle/lib/themes/default';
 const images = {
   createClass: require('../assets/createClass.png'),
   propTypes: require('../assets/propTypes.png'),
+  propTypesEmail: require('../assets/propTypesEmail.png'),
+  statelessFunctionalComponents: require('../assets/statelessFunctionalComponents.png'),
+  hooks: require('../assets/hooks.png'),
+  babel: require('../assets/babel.png'),
+  roadmap: require('../assets/roadmap.png'),
+  glasses: require('../assets/glasses.png'),
 };
 
 // Require CSS
@@ -83,7 +89,7 @@ export default class Presentation extends React.Component {
           <Notes>
             <p>These numbers speak for themselves, 122000 stars, 10000 commits, 1200 contributors</p>
             <p>Today React is a wildly popular library which leads us all to be here tonight</p>
-            <p>It's a project that commonly releases new features that other popular projects like Angular, Vue and Ember adopt immediately</p>
+            <p>It's a project that commonly releases new features that other popular projects like Angular, Vue, and Ember adopt immediately</p>
             <p>The initial public release happened midway through 2013</p>
           </Notes>
         </Slide>
@@ -95,7 +101,7 @@ export default class Presentation extends React.Component {
           <Text textColor="secondary">Initial public release</Text>
           <Notes>
             <p>It didn't strike me as a big event at the time.</p>
-            <p>I saw plenty of tweets and reactions to the release, but React has done a lot to shape how I've built web applications and the landscape of web application development as a whole</p>
+            <p>I saw plenty of tweets and reactions both positive and negavite, but nobody can deny that React has done a lot to shape the landscape of web and mobile application development</p>
             <p>The first version of React shipped with some base fundamentals</p>
           </Notes>
         </Slide>
@@ -108,9 +114,9 @@ export default class Presentation extends React.Component {
           <Text textColor="secondary">rendering</Text>
           <Text textColor="secondary">jsx</Text>
           <Notes>
-            <p>The fundamentals of React have been there from the beginning. Props, State, lifecycle methods, events, rendering, and JSX.</p>
+            <p>Props, State, lifecycle methods, events, rendering, and JSX.</p>
             <p>The forms have slightly changed over time as React has changed, but the underpinnings were in place from the beginning</p>
-            <p>Since the first release when the only way to render was to use...</p>
+            <p>In the first release when the only way to render was to use...</p>
           </Notes>
         </Slide>
 
@@ -118,10 +124,9 @@ export default class Presentation extends React.Component {
           <img style={{ maxHeight: '700px' }} src={images.createClass} />
           <Notes>
             <p>React.createClass</p>
-            <p>createClass had a few lifecycle methods that aren't around anymore</p>
-            <p>createClass looked a lot like this, you can see I'm making a ham sandwich with mustard and cheese</p>
+            <p>It looked a lot like this, you can see I'm making a ham sandwich with mustard and cheese</p>
             <p>And you can see that I went for real nostalgia here by using var declarations and classic require syntax</p>
-            <p>createClass had a few lifecycle methods that aren't around anymore</p>
+            <p>createClass had a few parts that aren't around anymore</p>
           </Notes>
         </Slide>
 
@@ -139,9 +144,9 @@ export default class Presentation extends React.Component {
           <Notes>
             <p>getInitialState and getDefaultProps</p>
             <p>In class components, defaultProps is a static property on the class and initial state is defined in the constructor</p>
-            <p>createClass had mixins</p>
-            <p>mixins were a way to share functionality</p>
-            <p>There is no direct form of mixins in newer versions of react. Mixins as a solution behave more like inheritance with subclassing in an object oriented class based language. Newer solutions favor composition in a couple different forms, specifically higher order components, render props, and hooks</p>
+            <p>createClass had these mixins and mixins were a way to share functionality, arguably a poor way to share functionality</p>
+            <p>There is no direct form of mixins in newer versions of react, they were essentially removed entirely when the createClass form was deprecated.</p>
+            <p>Newer solutions favor composition in a couple different forms, specifically higher order components, render props, and reusing hooks</p>
 
             <p>When React was first released, people focused on some phrasing that was used by the React team</p>
           </Notes>
@@ -326,7 +331,7 @@ export default class Presentation extends React.Component {
           <Text textColor="secondary">Support for more events</Text>
           <Text textColor="secondary">Support for more DOM properties</Text>
           <Notes>
-            In December of 2013 the team released 0.8.0. This was a smaller release that didn't have a lot of notable features. The 0.6.0 and 0.7.0 releases were skipped in the changelog so I didn't dig into them.
+            <p>In December of 2013 the team released 0.8.0. This was a smaller release that didn't have a lot of notable features.</p>
           </Notes>
         </Slide>
 
@@ -365,7 +370,7 @@ export default class Presentation extends React.Component {
           <Text textColor="secondary">Support for more DOM properties/attributes</Text>
           <Text textColor="secondary">React.addons.update</Text>
           <Notes>
-            March 2014 brought the 0.10.0 release with support for more SVG and DOM callbacks like onLoad for img tags. As well as the addon for performing deep updates on objects that often need to happen for setState
+            <p>March 2014 brought the 0.10.0 release with support for more SVG and DOM callbacks like onLoad for img tags. As well as the addon for performing deep updates on objects that often need to happen for setState</p>
           </Notes>
         </Slide>
 
@@ -389,7 +394,10 @@ export default class Presentation extends React.Component {
           <Text textColor="secondary">Support for more DOM properties/attributes</Text>
           <Text textColor="secondary">Improved SVG support</Text>
           <Notes>
-            Before July 2014 a component had to render a DOM element, they couldn't effectively render nothing.
+            <p>Before July 2014 a component had to render a DOM element, they couldn't effectively render nothing, so as of the 0.11.0 release you can render nothing.</p>
+            <p>I mentioned mixins earlier, the PureRenderMixin implemented the shouldComponentUpdate lifecycle method for a createClass component to do a shallow compare to determine if the component should render again. It's an optimization if you can guarantee that the component only uses values that can be compared with a triple equals strict equality comparison</p>
+            <p>Component namespaces are still a thing you might want if you're building a library of components and you don't want all of your library consumers to rely on specific files</p>
+            <p>And again another release with incremental improvements for DOM callbacks, attributes, and support for SVG tags</p>
           </Notes>
         </Slide>
 
@@ -413,7 +421,9 @@ export default class Presentation extends React.Component {
           <Text textColor="secondary">JSX Pragma no longer required</Text>
 
           <Notes>
-            Late 2014, brought some great things to React. Object spread in JSX allowed people to pass props to a component without specifying every single field that was coming through. And it was familiar to rest/spread syntax for JavaScript arrays. This feature was so good in JSX that it is now included in the 2018 version of the spec.
+            <p>Late 2014, brought some great things to React. </p>
+            <p>Object spread in JSX allowed people to pass props to a component without specifying every single field that was coming through. And it was familiar to rest/spread syntax for JavaScript arrays. This feature was so good in JSX that it is now included in the 2018 version of the spec.</p>
+            <p>The JSX pragma was also no longer needed so it couldn't be forgotten when compiling JSX files</p>
           </Notes>
         </Slide>
 
@@ -421,6 +431,10 @@ export default class Presentation extends React.Component {
           <Heading size={4} lineHeight={2} textColor="secondary">
             Nov 26, 2014: react-router
           </Heading>
+
+          <Notes>
+            react-router is a project that I commonly reach for when building new React projects. If you're new to react, the react-router project is use to handle conditional view rendering based on the state of the browser URL or an in-memory representation of a navigation history.
+          </Notes>
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
@@ -432,7 +446,7 @@ export default class Presentation extends React.Component {
           <Text textColor="secondary">Relay</Text>
           <Notes>
             <p>React.js Conf 2015 was very exciting</p>
-            I didn't get to go personally, but some very impactful projects were released at the conference. React Native for iOS was released to be able to use JavaScript Core and a wire protocol to be able to communicate between JavaScript and native Objective-C and Swift and create full featured iOS apps with React. This was and still is awesome, I don't know Objective-C or Swift and I could probably create an app using React Native and deploy it to the app store.
+            <p>I didn't get to go personally, but some very impactful projects were released at the conference. React Native for iOS was released to be able to use JavaScript Core and a wire protocol to be able to communicate between JavaScript and native Objective-C and Swift and create full featured iOS apps with React. This was and still is awesome, I don't know Objective-C or Swift and I could probably create an app using React Native and deploy it to the app store.</p>
           </Notes>
         </Slide>
 
@@ -441,14 +455,18 @@ export default class Presentation extends React.Component {
             March 10, 2015: 0.13.0
           </Heading>
 
-          <Text textColor="secondary">Calls to setState in life-cycle methods are now always batched and therefore asynchronous</Text>
-          <Text textColor="secondary">Mutating props after an element is created is deprecated and will cause warnings</Text>
-          <Text textColor="secondary">Support for using ES6 classes</Text>
-          <Text textColor="secondary">React.findDOMNode</Text>
+          <Text textColor="secondary">Calls to setState in life-cycle methods are asynchronous</Text>
           <Text textColor="secondary">setState callback</Text>
+          <Text textColor="secondary">Mutating props causes warnings</Text>
+          <Text textColor="secondary">React.findDOMNode</Text>
           <Text textColor="secondary">React.addons.classSet deprecated, classnames module introduced</Text>
+          <Text textColor="secondary">Support for using ES2015 classes</Text>
           <Notes>
-            TODO: needs notes and examples
+            <p>March 2015 introduced a few things</p>
+            <p>If you were unaware, setState takes two arguments, the first being an object or updater function to set the new state, and the second being a callback to be run after component state has been updated. So when calling setState inside a lifecycle method you can't guarantee that reading from state on a line after a call to setState will be the updated values. This change necessitated second callback argument if you definitely need to do something after the state has been updated.</p>
+
+            <p>Mutating props has always been a big no no, so the team added warnings for that</p>
+            <p>The findDOMNode method was introduced because of the plans to use classes and deprecate the method that createClass was using to find DOM nodes</p>
           </Notes>
         </Slide>
 
@@ -457,15 +475,16 @@ export default class Presentation extends React.Component {
             June 2, 2015: Redux
           </Heading>
           <Notes>
-            TODO: needs notes
+            Redux the project you probably all know, whether you like it or not. There was this idea of a flux architecture for React, in practice this usually meant global singleton in-memory stores than fired change events, they were global so different components in the component hierarchy were depending on exactly the same state and not two different copies of the same state that had the possibility of being out of sync. Redux kind of blew out of the water most of the other global state container projects and for many people became a de-facto standard. There are clearly many options and based on my interpretation of community sentiment redux has somewhat fallen out of favor and people are looking for a simpler option, but it is still a very popular project.
           </Notes>
         </Slide>
+
         <Slide transition={['zoom']} bgColor="primary">
           <Heading size={4} lineHeight={2} textColor="secondary">
             Sept 14, 2015: React Native for Android
           </Heading>
           <Notes>
-            TODO: needs notes
+            React Native for iOS was released in January 2015 and the initial Android release was delayed until September. So at this point native applications could be built for iOS and Android by developers that know very little about the ecosystem of those platforms as long as they had knowledge of how to use React. Thus pushing the ethos that you can learn once and build everywhere.
           </Notes>
         </Slide>
 
@@ -474,15 +493,28 @@ export default class Presentation extends React.Component {
             October 7, 2015: 0.14.0
           </Heading>
 
-          <Text textColor="secondary">Stateless functional Components</Text>
           <Text textColor="secondary">react-dom</Text>
           <Text textColor="secondary">Separate packages for react addons</Text>
-          <Text textColor="secondary">React.initializeTouchEvents</Text>
-          <Text textColor="secondary">Deprecated react-tools in favor of babel</Text>
           <Notes>
-            TODO: needs notes and examples
+            On to October 2015 the 0.14.0 release. The React team released packages that were split up. Separate packages for the code that handles the DOM in the react-dom package and separate packages for all of the different addons. This provides more flexibility and means that if you're not using the addons they aren't part of your compiled bundle that comes along with React and the code for handling DOM updates isn't included in projects written for React Native. Along with these two things we have a big thing, Stateless Functional Components.
           </Notes>
         </Slide>
+
+        <Slide>
+          <img style={{ maxWidth: '100%', maxHeight: '700px' }} src={images.statelessFunctionalComponents} />
+          <Notes>
+            Stateless functional components are great, if you just need a component that doesn't contain any business logic you can use a function and return some JSX. You can see here that both App and Welcome are functional components that are passed props
+          </Notes>
+        </Slide>
+
+        <Slide>
+          <img style={{ maxWidth: '100%', maxHeight: '700px' }} src={images.babel} />
+          <Notes>
+            The last part of the 0.14.0 release that I thought was important was that react-tools, which was the project that people used to handle compiling JSX was deprecated.
+            react-tools was a Facebook project and the community buzz around using Babel was really heating up, so the React team decided to push for using Babel with a react preset to transform JSX and other JavaScript syntax. Deciding to use Babel was a great decision for everyone in the community and it meant that the React team could focus more on React instead of a tertiary project.
+          </Notes>
+        </Slide>
+
         <Slide transition={['zoom']} bgColor="primary">
           <Heading size={4} lineHeight={2} textColor="secondary">
             April 7, 2016: 15.0.0
@@ -492,7 +524,7 @@ export default class Presentation extends React.Component {
           <Text textColor="secondary">Goodbye extra spans</Text>
           <Text textColor="secondary">All SVG tags supported</Text>
           <Notes>
-            TODO: needs notes and examples
+            April 2016, big change here. The React team decided that a 1.0.0 release didn't make sense, so they cranked it up to 15.
           </Notes>
         </Slide>
 
@@ -500,12 +532,8 @@ export default class Presentation extends React.Component {
           <Heading size={4} lineHeight={2} textColor="secondary">
             July 22, 2016: create-react-app
           </Heading>
-
-          <Text textColor="secondary"></Text>
-          <Text textColor="secondary"></Text>
-          <Text textColor="secondary"></Text>
           <Notes>
-            TODO: needs notes
+            In July 2016 we got create-react-app. An absolutely fantastic project for starting a react project and I really can't think of using something else as a foundation.
           </Notes>
         </Slide>
 
@@ -522,12 +550,9 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={4} lineHeight={2} textColor="secondary">
-            March 16, 2017: prop-types
-          </Heading>
+          <img style={{ maxWidth: '100%', maxHeight: '700px' }} src={images.propTypesEmail} />
           <Notes>
-            TODO: needs notes and examples
-            I gave the React team the prop-types repo
+            A few years ago I wanted to use prop-types separately from React, so I read through the original source and extracted the implementation into an npm module. The name prop-types name was available, so natually I took it. You can see here, Andrew from the React team politely asked me to let them take over the name. And I said yes because I would rather they have it than the community be confused. I don't think I have any commits or pull requests for the React repo but if you've used prop-types in the last few years, I had the opportunity to donate the package name to the team.
           </Notes>
         </Slide>
 
@@ -593,13 +618,18 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={4} lineHeight={2} textColor="secondary">
-            Conclusions
-          </Heading>
+          <img style={{ maxWidth: '100%', maxHeight: '700px' }} src={images.roadmap} />
 
           <Notes>
             React has had a long history as far as browser view libraries go. Personally I'm more excited to use React now than I was when I started. The team behind the project has strong corporate and community backing and there are major updates like Suspense still on the horizon in the coming months.
           </Notes>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <img style={{ maxWidth: '100%', maxHeight: '700px' }} src={images.glasses} />
+          <Heading size={4} lineHeight={2} textColor="secondary">
+            @_aaronackerman_
+          </Heading>
         </Slide>
       </Deck>
     );
