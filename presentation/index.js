@@ -34,6 +34,11 @@ const images = {
   glasses: require('../assets/glasses.png'),
   pureComponent: require('../assets/pureComponent.png'),
   testRenderer: require('../assets/testRenderer.png'),
+  errorBoundary: require('../assets/errorBoundary.png'),
+  portal: require('../assets/portal.png'),
+  fragment: require('../assets/fragment.png'),
+  context: require('../assets/context.png'),
+  portalGame: require('../assets/portalGame.jpg'),
 };
 
 // Require CSS
@@ -602,10 +607,29 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
 
-        <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={4} lineHeight={2} textColor="secondary">
-            September 26, 2017: 16.0.0
-          </Heading>
+        <Slide>
+          <img style={{ maxWidth: '100%', maxHeight: '700px' }} src={images.errorBoundary} />
+
+          <Notes>
+            It's somewhat amazing that it took so long for error boundaries to get into react. You can see there that the ErrorBoundary component uses a special lifecycle method called componentDidCatch. When an error is thrown in render or in a lifecycle method the componentDidCatch callback gives the opportunity to set some state on the component, and you can see in the render if there is an error we display that something went wrong. This also gives us the opportunity to log to an error catching service.
+          </Notes>
+        </Slide>
+
+        <Slide>
+          <img style={{ maxWidth: '100%', maxHeight: '300px' }} src={images.portalGame} />
+          <img style={{ maxWidth: '100%', maxHeight: '300px' }} src={images.portal} />
+
+          <Notes>
+            Portals are an interesting concept that was introduced to React. Portals are used to render into a different part of the DOM. This is common behavior that you want when you need to overlay a view that is definitely supposed to be displayed with a high z-index stacked on top of everything else. The things that come to mind here are modals, datepickers, and hovercards.
+          </Notes>
+        </Slide>
+
+        <Slide>
+          <img style={{ maxWidth: '100%', maxHeight: '700px' }} src={images.fragment} />
+
+          <Notes>
+            Fragments here are a special syntax that can be used to return a grouping of elements that don't have a single wrapping DOM element. It's always been a natural inclination to want to return multiple elements from a React component and whenever a person new to React runs into this they question what's going on here and why can't I do this. Using JSX can kind of trick you here, and it's necessary to think about how this code is going to be compiled. JavaScript only has single return values and the elements described in JSX will be compiled to to different function calls. So it turns out to be necessary to wrap the two {'<td>'} tags in a Fragment so they can be returned as one value. Before fragments it was necessary to wrap something like this in a {'<div>'} but that doesn't end up working well for tables.
+          </Notes>
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
@@ -613,13 +637,30 @@ export default class Presentation extends React.Component {
             March 29, 2018: 16.3.0
           </Heading>
           <Text textColor="secondary">Officially supported Context API</Text>
-          <Text textColor="secondary">React.createRef</Text>
-          <Text textColor="secondary">React.forwardRef</Text>
-          <Text textColor="secondary">getDerivedStateFromProps</Text>
           <Text textColor="secondary">React.StrictMode</Text>
           <Text textColor="secondary">React.unstable_AsyncMode to support suspense</Text>
           <Notes>
-            TODO: needs notes and examples
+            March 2018 finally brought an Officially supported context API that even uses render props. React.StrictMode to support the future features related to the fiber architecture and Suspense. And unstable_AsyncMode is available and recommended not to be used in production, but gives people a chance to prepare for features that are upcoming on the React roadmap.
+          </Notes>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <img style={{ maxWidth: '100%', maxHeight: '700px' }} src={images.context} />
+
+          <Notes>
+            Context
+
+            TODO
+          </Notes>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={4} lineHeight={2} textFont="monospace" textColor="secondary">
+            {'<React.StrictMode>'}
+          </Heading>
+
+          <Notes>
+            StrictMode is a component provided by React that can be used to make sure that your components are compatible with what the React team is calling the fiber architecture and AsyncMode, to be able to prioritize and interleave rendering to the DOM in batches.
           </Notes>
         </Slide>
 
@@ -639,15 +680,18 @@ export default class Presentation extends React.Component {
           <Notes>
             All the way back in October 2015 Stateless Functional Components were released to be able to write components with pure functions instead of createClass or ES2015 classes. But now with hooks, those functional components aren't so stateless anymore. You can see in this counter example the useState hook being used in a functional component. it returns two values, the current state and a method to set the next value of the state. There are several other hooks that allow for the same functionality that the component lifecycle methods provide for classes. So functional components are now essentially as powerful to use a class components and require less code to write.
 
-            <p>It's almost time to wrap this up just 2 more slides and one of them is about me</p>
+            <p>It's almost time to wrap this up, just a few more slides and one of them is about me</p>
           </Notes>
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
           <img style={{ maxWidth: '100%', maxHeight: '700px' }} src={images.roadmap} />
+          <a style={{color: '#FFF'}} href="https://www.youtube.com/watch?v=nLF0n9SACd4">Dan Abramov: JSConf Iceland 2018</a>
 
           <Notes>
             React has had a long history as far as browser view libraries go. Personally I'm more excited to use React now than I was when I started. The team behind the project has strong corporate and community backing and there are major updates like Suspense still on the horizon in the coming months.
+
+            You can get a good overview of the how the Suspense features are expected to work by watching the talk that Dan Abramov gave at JSConf Iceland 2018.
           </Notes>
         </Slide>
 
