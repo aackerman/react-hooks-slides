@@ -727,9 +727,9 @@ export default class Presentation extends React.Component {
           <a style={{color: '#FFF'}} href="https://www.youtube.com/watch?v=nLF0n9SACd4">Dan Abramov: JSConf Iceland 2018</a>
 
           <Notes>
-            React has had a long history as far as browser view libraries go. Personally I'm more excited to use React now than I was when I started. The team behind the project has strong corporate and community backing and there are major updates like Suspense still on the horizon in the coming months.
+            <p>React has had a long history as far as browser view libraries go. Personally I'm more excited to use React now than I was when I started. The team behind the project has strong corporate and community backing and there are major updates like Suspense still on the horizon in the coming months.</p>
 
-            You can get a good overview of the how the Suspense features are expected to work by watching the talk that Dan Abramov gave at JSConf Iceland 2018.
+            <p>You can get a good overview of the how the Suspense features are expected to work by watching the talk that Dan Abramov gave at JSConf Iceland 2018.</p>
           </Notes>
         </Slide>
 
@@ -738,6 +738,10 @@ export default class Presentation extends React.Component {
           <Heading size={4} lineHeight={2} textColor="secondary">
             @_aaronackerman_
           </Heading>
+
+          <Notes>
+            Thank you for your time tonight, you can find me here on twitter.
+          </Notes>
         </Slide>
       </Deck>
     );
