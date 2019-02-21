@@ -569,7 +569,11 @@ export default class Presentation extends React.Component {
           <Text textColor="secondary">Goodbye extra spans</Text>
           <Text textColor="secondary">All SVG tags supported</Text>
           <Notes>
-            <p>The React team decided that a 1.0.0 release didn't make sense, so they cranked it up to 15. I mentioned before about using data-reactid, so the rendered DOM was littered with these on every element rendered by React. But the team was able to find a way to remove these and clean up a little visual clutter that you would see in the elements pane of developer tools. Any text before this release was wrapped in spans, whether you put them there or not. And now that's not something you have to worry about. And finally all SVG tags are supported in 2016.</p>
+            <p>The React team decided that a 1.0.0 release didn't make sense, so they cranked it up to 15. I mentioned before about using data-reactid, so the rendered DOM was littered with these on every element rendered by React. But the team was able to find a way to remove these and clean up a little visual clutter that you would see in the elements pane of developer tools.</p>
+
+            <p>Any text before this release was wrapped in spans, whether you put them there or not. And now that's not something you have to worry about.</p>
+
+            <p>And finally all SVG tags are supported in 2016.</p>
           </Notes>
         </Slide>
 
@@ -578,7 +582,7 @@ export default class Presentation extends React.Component {
             July 22, 2016: create-react-app
           </Heading>
           <Notes>
-            In July 2016 we got create-react-app. An absolutely fantastic project for starting a react project and I really can't think of using something else as a foundation. If you haven't had the opportunity to use create-react-app it offers a great set of defaults for building a React project using webpack, babel, eslint, minification, and a number of other tools to guided you into the pit of success.
+            In July 2016 we got create-react-app. This is absolutely fantastic for starting a react project and I really can't think of using something else as a foundation. If you haven't had the opportunity to use create-react-app it offers a great set of defaults for building a React project using webpack, babel, eslint, minification, and a number of other tools to guide you into the pit of success.
           </Notes>
         </Slide>
 
@@ -588,14 +592,14 @@ export default class Presentation extends React.Component {
           </Heading>
 
           <Notes>
-            Close on the heels of the create-react-app release in late July the 15.3.0 brought a couple useful features. React.PureComponent and the Test Renderer.
+            Close on the heels of the create-react-app release in late July the 15.3.0 release brought a couple useful features. React.PureComponent and the Test Renderer.
           </Notes>
         </Slide>
 
         <Slide>
           <img style={{ maxWidth: '100%', maxHeight: '700px' }} src={images.pureComponent} />
           <Notes>
-            Ealier I mentioned the PureRenderMixin that could be used with createClass. Normal class components extend from React.Component, but you get the same behavior as the pure render mixin when extending from React.PureComponent.
+            Ealier I mentioned the PureRenderMixin that could be used with createClass and this is analogous to that. Normal class components extend from React.Component, but you get the same behavior as the pure render mixin when extending from React.PureComponent meaning that it implements a shouldComponentUpdate method with shallow comparisons.
           </Notes>
         </Slide>
 
@@ -603,13 +607,17 @@ export default class Presentation extends React.Component {
           <img style={{ maxWidth: '100%', maxHeight: '700px' }} src={images.testRenderer} />
           <Notes>
             <p>React test renderer can be used in testing to render components to JSON instead of using a mock DOM implementation like JSDom, this makes it easy to snapshot a component tree with a testing framework like Jest</p>
+
+            <p>A few years ago I wanted to use prop-types separately from React, so I read through the original source and extracted the implementation into an npm module. The name prop-types name was available, so natually I took it.</p>
           </Notes>
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
           <img style={{ maxWidth: '100%', maxHeight: '700px' }} src={images.propTypesEmail} />
           <Notes>
-            A few years ago I wanted to use prop-types separately from React, so I read through the original source and extracted the implementation into an npm module. The name prop-types name was available, so natually I took it. You can see here, Andrew from the React team politely asked me to let them take over the name. And I said yes because I would rather they have it than the community be confused. I don't think I have any commits or pull requests for the React repo but if you've used prop-types in the last few years, I had the opportunity to donate the package name to the team.
+            <p>You can see here, Andrew from the React team politely asked me to let them take over the name. And I said yes because I would rather they have it than the community be confused. I don't think I have any commits or pull requests for the React repo but if you've used prop-types in the last few years, I had the opportunity to donate the package name to the team.</p>
+
+            <p>After that segue we can get back to releases</p>
           </Notes>
         </Slide>
 
@@ -686,9 +694,7 @@ export default class Presentation extends React.Component {
           <img style={{ maxWidth: '100%', maxHeight: '700px' }} src={images.context} />
 
           <Notes>
-            Context
-
-            TODO
+            The context APIs in react have been in place for quite a while. They were being polished for a long time because the team seemed to feel that they weren't quite right. And the context APIs that are in place now officially are better and easier to use than the functionality that has been unofficially available in past releases.
           </Notes>
         </Slide>
 
