@@ -173,8 +173,8 @@ export default class Presentation extends React.Component {
             <p>That part of the code is responsible for keeping a representation of the DOM in memory understanding the differences between the desired state of the DOM and the current state of the DOM and applying changes</p>
             <p>The idea of the Virtual DOM turned out to be so unimportant to actually *using* React that there is not one mention of the word virtual and DOM together in the codebase today, and there's one small section in the documentation</p>
 
-            <p>It's common today to use Babel to compile projects with new syntax that is unsupported in modern browsers or modern syntax that is supported in older browsers</p>
-            <p>JSX itself isn't a standard JavaScript syntax so natually it needs to be compiled to JavaScript. In 2013 the tool that was used to do this was the [trigger slide]</p>
+            <p>It's common today to use Babel to compile projects with new JavaScript syntax that is unsupported in modern browsers or modern syntax that is supported in older browsers</p>
+            <p>JSX itself isn't standard JavaScript syntax so natually it needs to be compiled to JavaScript before it can be used in a browser. In 2013 the tool that was used to do this was the [trigger slide]</p>
           </Notes>
         </Slide>
 
@@ -184,8 +184,8 @@ export default class Presentation extends React.Component {
           </Heading>
 
           <Notes>
-            react-tools project. It was a project that you can still find on npm and it would compile separate JSX files to standard ES5 JavaScript files. And that was what you had to use because Babel didn't even exist and this is what they were using at Facebook.
-
+            <p>react-tools project.</p>
+            <p>It was a project that you can still find on npm and it would compile separate JSX files to standard ES5 JavaScript files. And that was what you had to use because Babel didn't even exist and this is what they were using at Facebook.</p>
             <p>In earlier releases React used a special comment to identify files that should be compiled with JSX</p>
           </Notes>
         </Slide>
@@ -202,7 +202,9 @@ export default class Presentation extends React.Component {
           </Heading>
 
           <Notes>
-            <p>That's the first line you can see here, the JSX pragma. It was comment that starts with @jsx and then React.DOM. This lines up with how JSX was compiled in early versions of React. It was common to be creating a react file with JSX, forget to add that comment to your file and have absolutely no idea why the file wouldn't compile and you would notice the problem or bring over someone else, or even post on stack overflow, but eventually you copy pasted the answer, because nobody types that out from scratch.</p>
+            <p>That's the first line you can see here, the JSX pragma. It was comment that starts with @jsx and then React.DOM.</p>
+            <p>This lines up with how JSX was compiled in early versions of React. It was common to be creating a react file with JSX, forget to add that comment to your file and have absolutely no idea why the file wouldn't compile and you would notice the problem or bring over someone else, or even post on stack overflow, but eventually you copy pasted the answer, because nobody types that out from scratch.</p>
+            <p>I'm going to start getting into some of the releases and the features that went along with them. I'm not going to call out all of the features, but I will bring up the notable ones. And I'm going to skip bug fixes entirely. There are a lot of bug fixes that go into each release.</p>
           </Notes>
         </Slide>
 
@@ -212,8 +214,7 @@ export default class Presentation extends React.Component {
             July 17, 2013: 0.4.0
           </Heading>
           <Notes>
-            <p>I'm going to start getting into some of the releases and the features that went along with them. I'm not going to call out all of the features, but I will bring up the notable ones. And I'm going to skip bug fixes entirely. There are a lot of bug fixes that go into each release.</p>
-            <p>Back in 2013 we had the 0.4.0 release and it included a few important features</p>
+            <p>Back in July 2013 we had the 0.4.0 release and it included a few important features</p>
           </Notes>
         </Slide>
 
@@ -224,8 +225,9 @@ export default class Presentation extends React.Component {
           <Text textFont="monospace" textColor="secondary">{'<div key={id} />'}</Text>
 
           <Notes>
-            <p>Key props are still a thing. But, they weren't present in the library until after it was publicly released. I still commonly see warnings for key props that I've mapped over a list of elements and the array of elements is missing keys.</p>
+            <p>Key props are still a thing. But, they weren't present in the library until after it was publicly released. I still commonly see warnings for key props when I've mapped over a list of elements and the array of elements is missing keys.</p>
             <p>If you're unfamiliar with key props, they are used by react to determine if the ordering of elements is the same after an update, and just remember to not use array indexes for your key props</p>
+            <p>In the early days of react not all elements were supported. People would attempt to use DOM elements that weren't supported, the elements wouldn't render and they would end up filing an issue on GitHub.</p>
           </Notes>
         </Slide>
 
@@ -235,7 +237,6 @@ export default class Presentation extends React.Component {
           </Heading>
 
           <Notes>
-            <p>In the early days of react not all elements were supported. People would attempt to use DOM elements that weren't supported, the elements wouldn't render and they would end up filing an issue on GitHub.</p>
             <p>So the 0.4.0 release brought support for the canvas element</p>
           </Notes>
         </Slide>
@@ -244,7 +245,8 @@ export default class Presentation extends React.Component {
           <img style={{ maxWidth: '100%', maxHeight: '700px' }} src={images.propTypes} />
 
           <Notes>
-            Prop types were released in 0.4.0. If you're new to React, prop types are used as a helpful warning system. When incorrect values are passed to a component you will see helpful warning messages in your developer tools console. I still use prop types often. Earlier in the history of react they were embedded in the core of the project, they weren't a separate package. I went ahead and extracted prop-types into a separate package so I could use it in projects I was working on that weren't using React.
+            <p>Prop types were released in 0.4.0. If you're new to React, prop types are used as a helpful warning system. When incorrect values are passed to a component you will see helpful warning messages in your developer tools console. I still use prop types often. Early in the history of react they were embedded in the core of the project, they are a separate package today. Back then, I went ahead and extracted prop-types into a separate package so I could use it in projects I was working on that weren't using React.</p>
+            <p>You may be unaware that React is powered by a synthetic event system</p>
           </Notes>
         </Slide>
 
@@ -253,9 +255,9 @@ export default class Presentation extends React.Component {
             Synthetic Event System
           </Heading>
           <Notes>
-            <p>You may be unaware that React is powered by a synthetic event system</p>
             <p>This means that React is normalizing event properties and behavior across different browsers to provide a consistent developer experience</p>
             <p>This means that as a user you can immediately forget that I said anything about this because generally it Just Works™</p>
+            <p>React provides a consistent onChange event for all elements [trigger slide]</p>
           </Notes>
         </Slide>
 
@@ -265,10 +267,11 @@ export default class Presentation extends React.Component {
           </Heading>
 
           <Notes>
-            <p>React provides a consistent onChange event for all elements that behave as form inputs. This is differs from the behavior that the native DOM interface provides, but at least it provides some consistency to the user.</p>
-            <p>The native DOM onchange event for an input element will trigger when the a user clicks outside the input or tabs to another element</p>
+             <p>that behave as form inputs. This is differs from the behavior that the native DOM interface provides, but at least it provides some consistency to the user.</p>
+            <p>The native DOM onchange event for an input element will trigger when the a user clicks outside the input or tabs to another element, essentially a blur</p>
             <p>The onChange behavior in React is closer to the native oninput callback that can be attached to input elements where the callback is called everytime the value changes</p>
-            <p>The consistency of the onChange event is a part of React that I value, I don't have to know about the difference between oninput and onchange. There's only one option to use.</p>
+            <p>The consistency of the onChange event is a part of React that I value, I don't have to know about the difference between oninput and onchange because there's only one option to use.</p>
+            <p>Similar to the consistent onChange event and the synthetic event system [trigger slide]</p>
           </Notes>
         </Slide>
 
@@ -278,8 +281,9 @@ export default class Presentation extends React.Component {
           </Heading>
 
           <Notes>
-            <p>Similar to the consistent onChange event and the synthetic event system, React uses wrappers for the native form inputs like textarea, select, and the input itself "to standardize inconsistencies in browser implementations"</p>
+            <p>React uses wrappers for the native form inputs like textarea, select, and the input itself "to standardize inconsistencies in browser implementations"</p>
             <p>Problems with inconsistencies between browsers are things that don't commonly come up in code reviews or even in manual testing scenarios.</p>
+            <p>There was also this concept of these addon packages that were supposed to help with using React [trigger slide]</p>
           </Notes>
         </Slide>
 
@@ -289,20 +293,19 @@ export default class Presentation extends React.Component {
           </Heading>
 
           <List>
-            <ListItem>update</ListItem>
-            <ListItem>ReactTestUtils</ListItem>
-            <ListItem>LinkedStateMixin</ListItem>
+            <ListItem>React.addons.update</ListItem>
+            <ListItem>React.addons.TestUtils</ListItem>
+            <ListItem>React.addons.LinkedStateMixin</ListItem>
             <ListItem>...</ListItem>
           </List>
 
           <Notes>
-            <p>Early on in React there was the concept of these addon packages that were supposed to help with using React.</p>
             <p>The update addon was used to make deep updates to state, the Immer project that was mentioned at a previous meetup can be used in place of that to make deep updates to state in an easy way</p>
             <p>The ReactTestUtils are still commonly used to test React components if you're not using something else like Enzyme</p>
             <p>The LinkedStateMixin mixin allowed inputs to simulate two-way binding behavior that was common in other popular libraries at the time</p>
             <p>Today many of these addons still exist, but they have been pulled into separate packages on npm and are no longer bundled alongside React core</p>
 
-            <p>Early on in the history of React every DOM node rendered by React was given a unique id and used the id attribute of the DOM node</p>
+            <p>Back then every DOM node rendered by React was given a unique id and used the id attribute of the DOM node [trigger slide]</p>
             <p></p>
           </Notes>
         </Slide>
@@ -314,8 +317,8 @@ export default class Presentation extends React.Component {
 
           <Notes>
             <p>It's not uncommon to want to use ids for CSS styling so at some point in time the team moved to using data star attributes with data-reactid.</p>
-            <p>At some point this was also a thorn in the team and I'll mention later when these data attributes were removed</p>
-            <p>There were several important features in the 0.4.0 release, and in creating this talk it was fun to look back and see just how early some of the groundwork was laid for the success of the project</p>
+            <p>This was also a thorn in the team and I'll mention later when these data attributes were removed</p>
+            <p>So we saw there were several important features in the 0.4.0 release, and in creating this talk it was fun to look back and see just how early some of the groundwork was laid for the success of the project</p>
           </Notes>
         </Slide>
 
@@ -328,9 +331,10 @@ export default class Presentation extends React.Component {
           <Text textColor="secondary">Support for more DOM properties</Text>
 
           <Notes>
-            <p>In October of 2013 the team released 0.5.0.</p>
+            <p>In October of 2013 the team released 0.5.0</p>
 
             <p>There was support in the react-tools project that I mentioned earlier to take the class attribute that is normally used in HTML and transform that to the className prop that is normally used in React components. The team decided to remove that functionality, there are now warnings instead</p>
+
             <p>I mentioned before about adding support for new DOM elements, in the same way not all of the DOM callbacks or properties were supported, especially around SVG, so I'll note a couple times these releases that add support for more of those.</p>
           </Notes>
         </Slide>
@@ -343,6 +347,7 @@ export default class Presentation extends React.Component {
           <Text textColor="secondary">Support for more DOM properties</Text>
           <Notes>
             <p>In December of 2013 the team released 0.8.0. This was a smaller release that didn't have a lot of notable features.</p>
+            <p>January however, brought something useful and fun [trigger slide]</p>
           </Notes>
         </Slide>
 
@@ -350,11 +355,12 @@ export default class Presentation extends React.Component {
           <Heading size={4} lineHeight={2} textColor="secondary">
             January 2, 2014
           </Heading>
-          <Text textColor="secondary">React Developer Tools</Text>
+          <Text textColor="secondary">React Developer Tools 🎉</Text>
 
           <Notes>
             <p>The React developer tools were released in 2014</p>
-            <p>I honestly didn't know that they had been around for that long. The dev tools extension has been a great addition from the beginning and have only improved along way with React.</p>
+            <p>I honestly didn't know that the dev tools had been around for that long. The dev tools extension has been a great addition from the beginning and have only improved along way with React.</p>
+            <p>A month later, just over 5 years ago [trigger slide]</p>
           </Notes>
         </Slide>
 
@@ -366,10 +372,10 @@ export default class Presentation extends React.Component {
           <Text textColor="secondary">Support for more DOM properties/attributes</Text>
           <Text textColor="secondary">Support for more types in React.PropTypes</Text>
           <Text textColor="secondary">React.addons.TestUtils</Text>
-          <Text textColor="secondary">React.addons.CSSTransitionGroup</Text>
           <Text textColor="secondary">Component.displayName</Text>
           <Notes>
-            The 0.9.0 release in February 5 years ago, came along with ReactTestUtils and component displayName. TestUtils has been important for exactly the reason it's named the way it is, for testing. Component displayName is something that most people don't worry about, these days the babel JSX transform will handle adding a displayName to component where the name is easy to figure out. But the displayName is important for react-dev-tools and being able to understand the component hierarchy at a glance.
+            The 0.9.0 release in February 5 years ago, came along with ReactTestUtils and component displayName. TestUtils has been important for exactly the reason it's named the way it is, for testing. Component displayName is something that most people don't worry about, these days the Babel JSX transform will handle adding a displayName to component where the name is easy to figure out. But the displayName is important for react-dev-tools and being able to understand the component hierarchy at a glance.
+            <p>March 2014 brought the 0.10.0 release [trigger slide]</p>
           </Notes>
         </Slide>
 
@@ -381,7 +387,7 @@ export default class Presentation extends React.Component {
           <Text textColor="secondary">Support for more DOM properties/attributes</Text>
           <Text textColor="secondary">React.addons.update</Text>
           <Notes>
-            <p>March 2014 brought the 0.10.0 release with support for more SVG and DOM callbacks like onLoad for img tags. As well as the addon for performing deep updates on objects that often need to happen for setState</p>
+            <p>with support for more SVG and DOM callbacks like onLoad for img tags. As well as the addon for performing deep updates on objects that often need to happen for setState</p>
           </Notes>
         </Slide>
 
@@ -391,7 +397,8 @@ export default class Presentation extends React.Component {
           </Heading>
           <Text textColor="secondary">react-hot-loader 🔥</Text>
           <Notes>
-            <p>In July 2014 Dan Abramov, who works on the React team at Facebook, released a project called react-hot-loader. If you're not familiar with react-hot-loader it's a fun project that takes advantage of the hot coad reloading functionality in webpack where code is updated in place without having the refresh the browser. Normally without react-hot-loader any components would lose their local component state. When you use react-hot-loader you can take advantage of not losing that state and not having to possibly go through several clicks to get the app to the state you want it to be in</p>
+            <p>In July 2014 Dan Abramov, who works on the React team at Facebook, released a project called react-hot-loader. If you're not familiar with react-hot-loader it's a fun project that takes advantage of the hot coad reloading functionality in webpack where code is updated in place without having the refresh the browser. Normally without react-hot-loader any components would lose their local component state. </p>
+            <p>When you use react-hot-loader you can take advantage of not losing that state and not having to possibly go through several clicks to get the app to the state you want it to be in</p>
           </Notes>
         </Slide>
 
@@ -401,13 +408,13 @@ export default class Presentation extends React.Component {
           </Heading>
           <Text textColor="secondary">{'Rendering null vs <div/>'}</Text>
           <Text textColor="secondary">PureRenderMixin</Text>
-          <Text textColor="secondary">{'Component namespaces e.g. <Components.Checkbox />'}</Text>
-          <Text textColor="secondary">Support for more DOM properties/attributes</Text>
+          <Text textColor="secondary">{'<Components.Checkbox />'}</Text>
+          <Text textColor="secondary">Support for more DOM attributes</Text>
           <Text textColor="secondary">Improved SVG support</Text>
           <Notes>
-            <p>Before July 2014 a component had to render a DOM element, they couldn't effectively render nothing, so as of the 0.11.0 release you can render nothing.</p>
+            <p>Before July 2014 a component had to render a DOM element, they couldn't effectively render nothing, so as of the 0.11.0 release you can return null from a component to render nothing.</p>
             <p>I mentioned mixins earlier, the PureRenderMixin implemented the shouldComponentUpdate lifecycle method for a createClass component to do a shallow compare to determine if the component should render again. It's an optimization if you can guarantee that the component only uses values that can be compared with a triple equals strict equality comparison</p>
-            <p>Component namespaces are still a thing you might want if you're building a library of components and you don't want all of your library consumers to rely on specific files</p>
+            <p>Component namespaces are still a thing you might want if you're building a library of components and you don't want all of your library consumers to rely on specific files, before this change you would have to pull out the Checkbox identifier and use it separately</p>
             <p>And again another release with incremental improvements for DOM callbacks, attributes, and support for SVG tags</p>
           </Notes>
         </Slide>
@@ -419,7 +426,7 @@ export default class Presentation extends React.Component {
           <Text textColor="secondary">{'<dialog> and <picture> elements'}</Text>
           <Text textColor="secondary">React.createElement API introduced</Text>
           <Notes>
-            <p>More support for new elements, we the get dialog and picture elements</p>
+            <p>More support for new elements, we the get dialog and picture elements in this patch release</p>
             <p>The createElement API is created to replace the element factories that look like React.DOM.div and React.DOM.span, instead you either pass the class of the component to instantiate or the string of a native DOM element like a div or a span</p>
           </Notes>
         </Slide>
@@ -432,9 +439,10 @@ export default class Presentation extends React.Component {
           <Text textColor="secondary">JSX Pragma no longer required</Text>
 
           <Notes>
-            <p>Late 2014, brought some great things to React. </p>
-            <p>Object spread in JSX allowed people to pass props to a component without specifying every single field that was coming through. And it was familiar to rest/spread syntax for JavaScript arrays. This feature was so good in JSX that it is now included in the 2018 version of the spec.</p>
+            <p>October 2014, brought some great things to React. </p>
+            <p>Object spread in JSX allowed people to pass props to a component without specifying every single field that was coming through. And it was familiar to rest/spread syntax for JavaScript arrays. This feature was so good in JSX that it is now included in the 2018 version of the spec for JavaScript.</p>
             <p>The JSX pragma was also no longer needed so it couldn't be forgotten when compiling JSX files</p>
+            <p>In November another notable React project comes along [trigger slide]</p>
           </Notes>
         </Slide>
 
@@ -444,7 +452,9 @@ export default class Presentation extends React.Component {
           </Heading>
 
           <Notes>
-            react-router is a project that I commonly reach for when building new React projects. If you're new to react, the react-router project is use to handle conditional view rendering based on the state of the browser URL or an in-memory representation of a navigation history.
+            react-router is a library that I commonly reach for when building new React projects. If you're new to react, react-router is used to handle conditional view rendering based on the state of the browser URL or an in-memory representation of a navigation history. A robust implementation for routing in React applications.
+
+            <p>Into 2015, a member of the React team organized the first React.js Conf [trigger slide]</p>
           </Notes>
         </Slide>
 
@@ -457,7 +467,14 @@ export default class Presentation extends React.Component {
           <Text textColor="secondary">Relay</Text>
           <Notes>
             <p>React.js Conf 2015 was very exciting</p>
+
             <p>I didn't get to go personally, but some very impactful projects were released at the conference. React Native for iOS was released to be able to use JavaScript Core and a wire protocol to be able to communicate between JavaScript and native Objective-C and Swift and create full featured iOS apps with React. This was and still is awesome, I don't know Objective-C or Swift and I could probably create an app using React Native and deploy it to the app store.</p>
+
+            <p>GraphQL and Relay are tangential and not strictly related to React, but they are pretty awesome nevertheless, if you're unfamiliar with GraphQL it defines a query interface spec along with reference implementations for allows API consumers to fetch exactly the data they need and no more, relay is a project to allow React to consume a GraphQL API</p>
+
+            <p>While I was writing this talk, I remembered how many exciting it was to see the release React Native and GraphQL, Both of these are crazy cool pieces of tech.</p>
+
+            <p>After React.js Conf, March 2015 introduced a few things with the 0.13.0 release [trigger slide]</p>
           </Notes>
         </Slide>
 
@@ -473,11 +490,15 @@ export default class Presentation extends React.Component {
           <Text textColor="secondary">React.addons.classSet deprecated, classnames module introduced</Text>
           <Text textColor="secondary">Support for using ES2015 classes</Text>
           <Notes>
-            <p>March 2015 introduced a few things</p>
             <p>If you were unaware, setState takes two arguments, the first being an object or updater function to set the new state, and the second being a callback to be run after component state has been updated. So when calling setState inside a lifecycle method you can't guarantee that reading from state on a line after a call to setState will be the updated values. This change necessitated second callback argument if you definitely need to do something after the state has been updated.</p>
 
             <p>Mutating props has always been a big no no, so the team added warnings for that</p>
+
             <p>The findDOMNode method was introduced because of the plans to use classes and deprecate the method that createClass was using to find DOM nodes</p>
+
+            <p>There was an addons for conditionally creating a combination of css classes, the addon was deprecated but the functionality lives on in the classnames module.</p>
+
+            <p>The major point of these release though was support for class components, all of the ideas for rendering React components with classes were the same.</p>
           </Notes>
         </Slide>
 
@@ -495,7 +516,7 @@ export default class Presentation extends React.Component {
             Sept 14, 2015<br/>React Native for Android
           </Heading>
           <Notes>
-            React Native for iOS was released in January 2015 and the initial Android release was delayed until September. So at this point native applications could be built for iOS and Android by developers that know very little about the ecosystem of those platforms as long as they had knowledge of how to use React. Thus pushing the ethos that you can learn once and build everywhere.
+            <p>React Native for iOS was released in January 2015 and the initial Android release was delayed until September. So at this point native applications could be built for iOS and Android by developers that know very little about the ecosystem of those platforms as long as they had knowledge of how to use React. Thus pushing the ethos that you can learn once and build everywhere.</p>
           </Notes>
         </Slide>
 
