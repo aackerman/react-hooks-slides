@@ -32,6 +32,8 @@ const images = {
   babel: require('../assets/babel.png'),
   roadmap: require('../assets/roadmap.png'),
   glasses: require('../assets/glasses.png'),
+  pureComponent: require('../assets/pureComponent.png'),
+  testRenderer: require('../assets/testRenderer.png'),
 };
 
 // Require CSS
@@ -69,7 +71,7 @@ export default class Presentation extends React.Component {
             <p>Hello, I'm Aaron Ackerman.</p>
             <p>I've been working with React for about 5 years.</p>
             <p>Tonight we're going to whirlwind through how React has changed since its release</p>
-            <p>I'm definitely going to leave a bunch out, and it's totally subjective what I decided to leave out. I had about 10 days to prepare this talk and I would have loved to spend more time on it, but we're already here :)</p>
+            <p>I'm definitely going to leave a bunch out, and it's totally subjective what I decided to leave out. I had about 10 days to prepare this talk and I would have loved to spend more time on it, and just to be clear many of these examples are screenshotted from the react documentation, so props to anyone who has worked on those.</p>
           </Notes>
         </Slide>
 
@@ -439,7 +441,7 @@ export default class Presentation extends React.Component {
 
         <Slide transition={['zoom']} bgColor="primary">
           <Heading size={4} lineHeight={2} textColor="secondary">
-            January 28-29 React.js Conf 2015
+            January 28-29<br/>React.js Conf 2015
           </Heading>
           <Text textColor="secondary">React Native</Text>
           <Text textColor="secondary">GraphQL</Text>
@@ -481,7 +483,7 @@ export default class Presentation extends React.Component {
 
         <Slide transition={['zoom']} bgColor="primary">
           <Heading size={4} lineHeight={2} textColor="secondary">
-            Sept 14, 2015: React Native for Android
+            Sept 14, 2015<br/>React Native for Android
           </Heading>
           <Notes>
             React Native for iOS was released in January 2015 and the initial Android release was delayed until September. So at this point native applications could be built for iOS and Android by developers that know very little about the ecosystem of those platforms as long as they had knowledge of how to use React. Thus pushing the ethos that you can learn once and build everywhere.
@@ -542,10 +544,22 @@ export default class Presentation extends React.Component {
             July 29, 2016: 15.3.0
           </Heading>
 
-          <Text textColor="secondary">React.PureComponent</Text>
-          <Text textColor="secondary">React Test Renderer</Text>
           <Notes>
-            TODO: needs notes and examples
+            Close on the heels of the create-react-app release in late July the 15.3.0 brought a couple useful features. React.PureComponent and the Test Renderer.
+          </Notes>
+        </Slide>
+
+        <Slide>
+          <img style={{ maxWidth: '100%', maxHeight: '700px' }} src={images.pureComponent} />
+          <Notes>
+            Ealier I mentioned the PureRenderMixin that could be used with createClass. Normal class components extend from React.Component, but you get the same behavior as the pure render mixin when extending from React.PureComponent.
+          </Notes>
+        </Slide>
+
+        <Slide>
+          <img style={{ maxWidth: '100%', maxHeight: '700px' }} src={images.testRenderer} />
+          <Notes>
+            <p>React test renderer can be used in testing to render components to JSON instead of using a mock DOM implementation like JSDom, this makes it easy to snapshot a component tree with a testing framework like Jest</p>
           </Notes>
         </Slide>
 
@@ -580,15 +594,18 @@ export default class Presentation extends React.Component {
           <Heading size={4} lineHeight={2} textColor="secondary">
             September 26, 2017: 16.0.0
           </Heading>
-          <Text textColor="secondary">Rendering of arrays and strings from `render`</Text>
           <Text textColor="secondary">Error Boundaries</Text>
           <Text textColor="secondary">Portals</Text>
-          <Text textColor="secondary">Server-side stream rendering</Text>
           <Text textColor="secondary">Fragments</Text>
-          <Text textColor="secondary">Major Deprecations Removed</Text>
           <Notes>
-            TODO: needs notes and examples
+            The React team really likes to make their major releases actually have major features. The 16.0.0 release had an important underlying rewrite that happened called fiber, they even had a website for tracking the progress they were making on getting all of the tests to pass for the new architecture.
           </Notes>
+        </Slide>
+
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={4} lineHeight={2} textColor="secondary">
+            September 26, 2017: 16.0.0
+          </Heading>
         </Slide>
 
         <Slide transition={['zoom']} bgColor="primary">
@@ -611,9 +628,18 @@ export default class Presentation extends React.Component {
             February 6, 2019: 16.8.0
           </Heading>
           <Text textColor="secondary">Hooks</Text>
-          <Text textColor="secondary">React.lazy</Text>
           <Notes>
-            TODO: needs notes and examples
+            Earlier this month, the 16.8.0 release might have been the most important release to date. The big thing that came in this release was hooks.
+          </Notes>
+        </Slide>
+
+        <Slide>
+          <img style={{ maxWidth: '100%', maxHeight: '700px' }} src={images.hooks} />
+
+          <Notes>
+            All the way back in October 2015 Stateless Functional Components were released to be able to write components with pure functions instead of createClass or ES2015 classes. But now with hooks, those functional components aren't so stateless anymore. You can see in this counter example the useState hook being used in a functional component. it returns two values, the current state and a method to set the next value of the state. There are several other hooks that allow for the same functionality that the component lifecycle methods provide for classes. So functional components are now essentially as powerful to use a class components and require less code to write.
+
+            <p>It's almost time to wrap this up just 2 more slides and one of them is about me</p>
           </Notes>
         </Slide>
 
